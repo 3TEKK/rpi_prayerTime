@@ -1,0 +1,13 @@
+body {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.modal{
+    color:black;
+}
+
+.modal-backdrop{
+    opacity:1 !important;
+}

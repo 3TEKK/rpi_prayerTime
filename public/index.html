@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prayer Times</title>
+    
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+   
+    <!-- iconify -->
+    <script src="https://code.iconify.design/1/1.0.3/iconify.min.js"></script>
+
+    <!-- fontawesome -->
+    <script src="https://kit.fontawesome.com/4a822b1d6a.js" crossorigin="anonymous"></script>
+ 
+    <!-- style & web socket -->
+    <link href="/styles.css" rel="stylesheet"/>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js'></script>
+
+</head>
+<body>
+    <h1 class="mt-4">
+        <i class="iconify"  data-inline="true"></i>
+       
+        <b id="DateHM"></b> - Prayer Times
+        
+        <!-- button trigger modal -->
+        <button type="button" class="btn-sm btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
+            <i class="fas fa-cog"></i>&nbsp;
+            Settings
+        </button>
+    </h1>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">
+                <i   data-inline="true"></i>
+                Settings
+            </h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                
+                <div class="form-group row">
+                    <p class="text-left">
+                        City Name:
+                    </p>
+                    <!-- requirments -->
+                    <div class="col-sm-12">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">
+                                <i class="fas fa-map-marker-alt"></i>
+                              </div>
+                            </div>
+                            <input id="message" class="form-control form-control-lg" 
+                            type="text" placeholder="Enter city name:..."/>    
+                        </div>
+                    </div>
+                    <!-- requirments -->
+                    <p class="text-left">
+                        Prayer Times: 
+                    </p>
+                    
+                    <div class="col-sm-12">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">
+                                <i class="fas fa-map-marker-alt"></i>
+                              </div>
+                            </div>
+                            <input id="Fajar" class="form-control form-control-lg" 
+                            type="text" placeholder="Fajr:..."/>    
+                        </div>
+                    </div>
+
+                    
+                    <div class="col-sm-12">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">
+                                <i class="Duhur:..."></i>
+                              </div>
+                            </div>
+                            <input id="Sunrise" class="form-control form-control-lg" 
+                            type="text" placeholder="Sunrise:..."/>    
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-12">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">
+                                <i class="Dhuhr:..."></i>
+                              </div>
+                            </div>
+                            <input id="Duhur" class="form-control form-control-lg" 
+                            type="text" placeholder="Duhur:..."/>    
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-12">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">
+                                <i class="fas fa-map-marker-alt"></i>
+                              </div>
+                            </div>
+                            <input id="Asr" class="form-control form-control-lg" 
+                            type="text" placeholder="Asr:..."/>    
+                        </div>
+                    </div> 
+                    
+                    
+                    <div class="col-sm-12">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">
+                                <i class="fas fa-map-marker-alt"></i>
+                              </div>
+                            </div>
+                            <input id="Maghrib" class="form-control form-control-lg" 
+                            type="text" placeholder="Maghrib:..."/>    
+                        </div>
+                    </div>
+
+                    
+                    <div class="col-sm-12">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">
+                                <i class="fas fa-map-marker-alt"></i>
+                              </div>
+                            </div>
+                            <input id="Isha" class="form-control form-control-lg" 
+                            type="text" placeholder="Isha:..."/>    
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div id="feedback"></div>
+
+            </div>
+            <div class="modal-footer">
+                <button id="send" type="button" class="btn btn-success">
+                    <i class="fas fa-check-circle"></i>&nbsp;
+                    Apply
+                </button>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <!-- output -->
+    <div class="container" style="text-align: left;">
+        
+        <div class="row">
+            <div class="col-lg-6">
+                <h1 id="City" class="display-4">Vaasa</h1>
+                <p class="lead">
+                    <b id="DateM"></b>
+                    /
+                    <b id="DateH"></b>
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <h1 id='jam' style='text-align:right' class='display-4 text-right'></h1>
+            </div>
+        </div>
+        
+        <marquee class="mt-3 mb-3" direction="right">
+            <h2>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 &nbsp;&nbsp;&nbsp; اِنَّ الصَّلٰوةَ كَانَتْ عَلَى الْمُؤْمِنِيْنَ كِتٰبًا مَّوْقُوْتًا - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            فَسُبْحٰنَ اللّٰهِ حِيْنَ تُمْسُوْنَ وَحِيْنَ تُصْبِحُوْنَ - Q.S. An-Nisa/4: 103: 17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;- فَسُبْحٰنَ اللّٰهِ حِيْنَ تُمْسُوْنَ وَحِيْنَ تُصْبِحُوْنَ  - Q.S. Ar-Rum/30: 17
+            </h2>
+        </marquee>
+
+        <div class="row mb-4 mt-4">
+            <!-- Fajr -->
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="card text-white" style="background-color: black;">
+                    <img class="card-img" 
+                    src="img/a0.png" 
+                    alt="Card image">
+                    <div class="card-img-overlay">
+                        <h1 class="card-title">Fajr فجر</h1>
+                        <h1 id="Fajr" class="text-right display-4">7:00</h1>
+                    </div>
+                </div>
+            </div>
+            <!-- Sunrise -->
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="card text-white" style="background-color: black;">
+                    <img class="card-img" 
+                    src="img/a1.png" 
+                    alt="Card image">
+                    <div class="card-img-overlay">
+                        <h1 class="card-title">Shuruq شروق</h1>
+                        <h1 id="Sunrise" class="text-right display-4">8:00</h1>
+                    </div>
+                </div>
+            </div>
+            <!-- Dzuhur -->
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="card text-white" style="background-color: black;">
+                    <img class="card-img" 
+                    src="img/a2.png" 
+                    alt="Card image">
+                    <div class="card-img-overlay">
+                        <h1 class="card-title">Duhur الظهر</h1>
+                        <h1 id="Duhur" class="text-right display-4">13:00</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Asar -->
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="card text-white" style="background-color: black;">
+                    <img class="card-img" 
+                    src="img/a3.png" 
+                    alt="Card image">
+                    <div class="card-img-overlay">
+                        <h1 class="card-title">'Asr العصر</h1>
+                        <h1 id="Asr" class="text-right display-4">18:00</h1>
+                    </div>
+                </div>
+            </div>
+            <!-- Magrib -->
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="card text-white" style="background-color: black;">
+                    <img class="card-img" 
+                    src="img/a4.png" 
+                    alt="Card image">
+                    <div class="card-img-overlay">
+                        <h1 class="card-title">Meghrib المغرب</h1>
+                        <h1 id="Meghrib" class="text-right display-4">17:00</h1>
+                    </div>
+                </div>
+            </div>
+            <!-- Isya -->
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="card text-white" style="background-color: black;">
+                    <img class="card-img" 
+                    src="img/a5.png" 
+                    alt="Card image">
+                    <div class="card-img-overlay">
+                        <h1 class="card-title">'Isha العشاء</h1>
+                        <h1 id="Isha" class="text-right display-4">20:00</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <marquee class="mt-5 mb-0" direction="left">
+            <h2>
+                Once the Prophet (ﷺ) remained behind us in a journey. He joined us while we were performing ablution for the prayer which was over-due. 
+                We were just passing wet hands over our feet (and not washing them properly) so the Prophet (ﷺ) addressed us in a loud voice and said twice or thrice: 
+                "Save your heels from the fire."
+            </h2>
+        </marquee>
+
+    </div>
+
+    <script src='/chat.js'></script>
+    <script src='/clock.js'></script>
+    <script src='/getapi.js'></script>
+</body>
+</html>
