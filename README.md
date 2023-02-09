@@ -8,7 +8,7 @@
 
 Klik gambar berikut untuk melihat video demo:
 
-[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/jMkW2koPo18/0.jpg)](http://www.youtube.com/watch?v=jMkW2koPo18)
+
 
 Display jadwal Imsakiyah Ramadan dengan fitur: menampilkan jadwal Imsakiyah di kota tertentu (di Indonesia), setting kota secara wireless via WiFi & alarm azan otomatis setiap masuk waktu sholat. Dirancang dengan Raspberry Pi 3B+, untuk fitur display dengan Node.js (Express.js & Socket.io), sedangkan alarm azan otomatis dengan Python (Pygame). Data jadwal Imsakiyah diambil dari [Aladhan Prayer Times API](https://aladhan.com/prayer-times-api), sedangkan audio azan bersumber dari serial Upin & Ipin, dengan muazzin Syeikh Abdul Karim Al-Makki.
 
