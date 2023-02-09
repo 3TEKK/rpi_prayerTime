@@ -99,8 +99,4 @@ You can also configure the city  via your laptop, tablet or even a smartphone. F
 
 <hr>
 
-# rpi_prayerTime
-# rpi_prayerTime
-# rpi_prayerTime
-# rpi_prayerTime
-# rpi_prayerTime
+
