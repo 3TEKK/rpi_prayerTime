@@ -1,10 +1,10 @@
-![simplinnovation](https://4.bp.blogspot.com/-f7YxPyqHAzY/WJ6VnkvE0SI/AAAAAAAADTQ/0tDQPTrVrtMAFT-q-1-3ktUQT5Il9FGdQCLcB/s350/simpLINnovation1a.png)
+
 
 # Prayer Times Display & Alarm
 
 ## 📋 Project Summary
 
-![alt text](https://github.com/jenizar/RPi_Ramadan_PrayerTimes/blob/master/Screenshot.png)
+
 
 Klik gambar berikut untuk melihat video demo:
 
@@ -30,13 +30,9 @@ This project is built on __Raspberry Pi 3B+__ with __Raspbian OS__, __Python 3.x
 
 <hr>
 
-- ### 2. Clone this project
 
-    Clone this project from my github repo. [Download here](https://github.com/LintangWisesa/RPi_Ramadan_PrayerTimes) or clone it from your terminal (make sure you've installed *__git__* on your Pi):
 
-    ```bash
-    $ git clone https://github.com/LintangWisesa/RPi_Ramadan_PrayerTimes.git
-    ```
+
 
 <hr>
 
@@ -99,18 +95,10 @@ This project is built on __Raspberry Pi 3B+__ with __Raspbian OS__, __Python 3.x
 
 - ### 5. Control it from your gadget
 
-You can also configure the city displayed (Indonesia only) via your laptop, tablet or even a smartphone. First connect your gadget to a WiFi which your Raspberry Pi is connected to. Open your browser & go to your Pi's IP address on port ```1234```, for example: http://123.456.78.910:1234. You'll see something similar with your Pi display & try to config its city. Enjoy!
+You can also configure the city  via your laptop, tablet or even a smartphone. First connect your gadget to a WiFi which your Raspberry Pi is connected to. Open your browser & go to your Pi's IP address on port ```1234```, for example: http://123.456.78.910:1234. You'll see something similar with your Pi display & try to config its city. Enjoy!
 
 <hr>
 
-#### Lintang Wisesa :love_letter: _lintangwisesa@ymail.com_
-
-[Facebook](https://www.facebook.com/lintangbagus) | 
-[Twitter](https://twitter.com/Lintang_Wisesa) |
-[Youtube](https://www.youtube.com/user/lintangbagus) |
-[LinkedIn](https://www.linkedin.com/in/lintangwisesa/) | 
-:octocat: [GitHub](https://github.com/LintangWisesa) |
-[Hackster](https://www.hackster.io/lintangwisesa)
 # rpi_prayerTime
 # rpi_prayerTime
 # rpi_prayerTime
