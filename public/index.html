@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Prayer Times</title>
+    <title>Lintang RPi Ramadhan</title>
     
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -25,10 +25,8 @@
 </head>
 <body>
     <h1 class="mt-4">
-        <i class="iconify"  data-inline="true"></i>
-       
-        <b id="DateHM"></b> - Prayer Times
-        
+        <i class="iconify" data-icon="logos-raspberry-pi" data-inline="true"></i>
+        رمضان Prayer Times
         <!-- button trigger modal -->
         <button type="button" class="btn-sm btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
             <i class="fas fa-cog"></i>&nbsp;
@@ -42,20 +40,19 @@
         <div class="modal-content">
             <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLongTitle">
-                <i   data-inline="true"></i>
-                Settings
+                <i class="iconify" data-icon="logos-raspberry-pi" data-inline="true"></i>
+                Pengaturan Kota
             </h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
             </div>
             <div class="modal-body">
-                
+                <p class="text-left">
+                    City Name
+                </p>
                 <div class="form-group row">
-                    <p class="text-left">
-                        City Name:
-                    </p>
-                    <!-- requirments -->
+                    <!-- kota -->
                     <div class="col-sm-12">
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
@@ -64,52 +61,9 @@
                               </div>
                             </div>
                             <input id="message" class="form-control form-control-lg" 
-                            type="text" placeholder="Enter city name:..."/>    
+                            type="text" placeholder="Enter city name ..."/>    
                         </div>
                     </div>
-                    <!-- requirments -->
-                    <p class="text-left">
-                        Prayer Times: 
-                    </p>
-                    
-                    <div class="col-sm-12">
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text">
-                                <i class="fas fa-map-marker-alt"></i>
-                              </div>
-                            </div>
-                            <input id="Fajar" class="form-control form-control-lg" 
-                            type="text" placeholder="Fajr:..."/>    
-                        </div>
-                    </div>
-
-                    
-                    <div class="col-sm-12">
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text">
-                                <i class="Duhur:..."></i>
-                              </div>
-                            </div>
-                            <input id="Sunrise" class="form-control form-control-lg" 
-                            type="text" placeholder="Sunrise:..."/>    
-                        </div>
-                    </div>
-
-
-                    <div class="col-sm-12">
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text">
-                                <i class="Dhuhr:..."></i>
-                              </div>
-                            </div>
-                            <input id="Duhur" class="form-control form-control-lg" 
-                            type="text" placeholder="Duhur:..."/>    
-                        </div>
-                    </div>
-
 
                     <div class="col-sm-12">
                         <div class="input-group mb-2">
@@ -118,12 +72,14 @@
                                 <i class="fas fa-map-marker-alt"></i>
                               </div>
                             </div>
-                            <input id="Asr" class="form-control form-control-lg" 
-                            type="text" placeholder="Asr:..."/>    
+                            <input id="iFajr" class="form-control form-control-lg" 
+                            type="text" placeholder="Fajr ..."/>    
                         </div>
-                    </div> 
+                    </div>
+
+
                     
-                    
+
                     <div class="col-sm-12">
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
@@ -131,12 +87,11 @@
                                 <i class="fas fa-map-marker-alt"></i>
                               </div>
                             </div>
-                            <input id="Maghrib" class="form-control form-control-lg" 
-                            type="text" placeholder="Maghrib:..."/>    
+                            <input id="iDuhur" class="form-control form-control-lg" 
+                            type="text" placeholder="Duhur..."/>    
                         </div>
                     </div>
 
-                    
                     <div class="col-sm-12">
                         <div class="input-group mb-2">
                             <div class="input-group-prepend">
@@ -144,14 +99,35 @@
                                 <i class="fas fa-map-marker-alt"></i>
                               </div>
                             </div>
-                            <input id="Isha" class="form-control form-control-lg" 
-                            type="text" placeholder="Isha:..."/>    
+                            <input id="iAsr" class="form-control form-control-lg" 
+                            type="text" placeholder="Asr..."/>    
                         </div>
                     </div>
 
+                    <div class="col-sm-12">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">
+                                <i class="fas fa-map-marker-alt"></i>
+                              </div>
+                            </div>
+                            <input id="iMaghrib" class="form-control form-control-lg" 
+                            type="text" placeholder="Maghrib..."/>    
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">
+                                <i class="fas fa-map-marker-alt"></i>
+                              </div>
+                            </div>
+                            <input id="iIsha" class="form-control form-control-lg" 
+                            type="text" placeholder="Isha..."/>    
+                        </div>
+                    </div>
                 </div>
-
-
                 <div id="feedback"></div>
 
             </div>
@@ -170,11 +146,11 @@
         
         <div class="row">
             <div class="col-lg-6">
-                <h1 id="City" class="display-4">Vaasa</h1>
+                <h1 id="kota" class="display-4">Vaasa</h1>
                 <p class="lead">
-                    <b id="DateM"></b>
+                    <b id="tanggalM"></b>
                     /
-                    <b id="DateH"></b>
+                    <b id="tanggalH"></b>
                 </p>
             </div>
             <div class="col-lg-6">
@@ -200,10 +176,11 @@
                     alt="Card image">
                     <div class="card-img-overlay">
                         <h1 class="card-title">Fajr فجر</h1>
-                        <h1 id="Fajr" class="text-right display-4">7:00</h1>
+                        <h1 id="Fajr" class="text-right display-4"></h1>
                     </div>
                 </div>
             </div>
+            
             <!-- Sunrise -->
             <div class="col-sm-12 col-md-4 col-lg-4">
                 <div class="card text-white" style="background-color: black;">
@@ -211,8 +188,8 @@
                     src="img/a1.png" 
                     alt="Card image">
                     <div class="card-img-overlay">
-                        <h1 class="card-title">Shuruq شروق</h1>
-                        <h1 id="Sunrise" class="text-right display-4">8:00</h1>
+                        <h1 class="card-title">Sunrise شروق</h1>
+                        <h1 id="Sunrise" class="text-right display-4"></h1>
                     </div>
                 </div>
             </div>
@@ -223,11 +200,12 @@
                     src="img/a2.png" 
                     alt="Card image">
                     <div class="card-img-overlay">
-                        <h1 class="card-title">Duhur الظهر</h1>
-                        <h1 id="Duhur" class="text-right display-4">13:00</h1>
+                        <h1 class="card-title">Dzuhur الظهر</h1>
+                        <h1 id="Duhur" class="text-right display-4"></h1>
                     </div>
                 </div>
             </div>
+            
         </div>
 
         <div class="row">
@@ -238,8 +216,8 @@
                     src="img/a3.png" 
                     alt="Card image">
                     <div class="card-img-overlay">
-                        <h1 class="card-title">'Asr العصر</h1>
-                        <h1 id="Asr" class="text-right display-4">18:00</h1>
+                        <h1 class="card-title">Asr العصر</h1>
+                        <h1 id="Asr" class="text-right display-4"></h1>
                     </div>
                 </div>
             </div>
@@ -250,8 +228,8 @@
                     src="img/a4.png" 
                     alt="Card image">
                     <div class="card-img-overlay">
-                        <h1 class="card-title">Meghrib المغرب</h1>
-                        <h1 id="Meghrib" class="text-right display-4">17:00</h1>
+                        <h1 class="card-title">Maghrib المغرب</h1>
+                        <h1 id="Maghrib" class="text-right display-4"></h1>
                     </div>
                 </div>
             </div>
@@ -262,20 +240,12 @@
                     src="img/a5.png" 
                     alt="Card image">
                     <div class="card-img-overlay">
-                        <h1 class="card-title">'Isha العشاء</h1>
-                        <h1 id="Isha" class="text-right display-4">20:00</h1>
+                        <h1 class="card-title">Isha العشاء</h1>
+                        <h1 id="Isha" class="text-right display-4"></h1>
                     </div>
                 </div>
             </div>
         </div>
-
-        <marquee class="mt-5 mb-0" direction="left">
-            <h2>
-                Once the Prophet (ﷺ) remained behind us in a journey. He joined us while we were performing ablution for the prayer which was over-due. 
-                We were just passing wet hands over our feet (and not washing them properly) so the Prophet (ﷺ) addressed us in a loud voice and said twice or thrice: 
-                "Save your heels from the fire."
-            </h2>
-        </marquee>
 
     </div>
 

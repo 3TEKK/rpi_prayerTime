@@ -5,8 +5,8 @@ var app = express()
 app.use(express.static('public'))
 
 // activate server 
-var server = app.listen(2443, ()=>{
-    console.log('Server run @port 2443!')
+var server = app.listen(1234, ()=>{
+    console.log('Server run @port 1234!')
 })
 
 // socket setup
