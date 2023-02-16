@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Lintang RPi Ramadhan</title>
+    <title>Prayer Time Display</title>
     
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -12,6 +12,9 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!-- iconify -->
     <script src="https://code.iconify.design/1/1.0.3/iconify.min.js"></script>
 
@@ -24,15 +27,57 @@
 
 </head>
 <body>
-    <h1 class="mt-4">
-        <i class="iconify" data-icon="logos-raspberry-pi" data-inline="true"></i>
-        رمضان Prayer Times
-        <!-- button trigger modal -->
-        <button type="button" class="btn-sm btn btn-success" data-toggle="modal" data-target="#exampleModalCenter">
-            <i class="fas fa-cog"></i>&nbsp;
-            Settings
-        </button>
-    </h1>
+    <div class="mt-3 d-flex justify-content-center">
+        <div>
+            <img src="/img/VIS.jpg" class="rounded img-responsiv" style="max-width:20%;" alt="logo">
+        </div>
+        <h1 >
+            <p id="mesjidName" >Vaasa Islamic society</p>
+             - Prayer Times
+            <!-- button trigger modal -->
+            <button type="button" class="btn-lg btn" style="background-color:transparent"  data-toggle="modal" data-target="#exampleModalCenter">
+                <i class="fas fa-cog"></i>&nbsp;
+                ⚙️
+            </button>
+        </h1>
+    </div>
+   
+    <!-- Modal -->
+    <div class="container" >
+        <!-- Trigger the modal with a button  -->
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">popup</button>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+          
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                
+              </div>
+              <div class="modal-body">
+                <div>
+                    <img src="/img/VIS.jpg" class="rounded img-responsiv" style="max-width:20%;" alt="logo">
+                </div>
+                <div>
+                    <img src="/img/phoneoff.jpg" class="rounded img-responsiv" style="max-width:70%;" alt="logo">
+                </div>
+                <p>Some text in the modal.Some text in the modal.Some text in the modal.Some text in the modal.Some text in the modal.Some text in the modal.</p>
+                <p>Some text in the modal.</p>
+                <p>Some text in the modal.Some text in the modal.Some text in the modal.Some text in the modal.Some text in the modal.Some text in the modal.</p>
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+    <!-- Modal -->
+
+
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -40,17 +85,15 @@
         <div class="modal-content">
             <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLongTitle">
-                <i class="iconify" data-icon="logos-raspberry-pi" data-inline="true"></i>
-                Pengaturan Kota
+                <i class="iconify"  data-inline="true"></i>
+                Settings
             </h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
             </div>
             <div class="modal-body">
-                <p class="text-left">
-                    City Name
-                </p>
+
                 <div class="form-group row">
                     <!-- kota -->
                     <div class="col-sm-12">
@@ -62,6 +105,18 @@
                             </div>
                             <input id="message" class="form-control form-control-lg" 
                             type="text" placeholder="Enter city name ..."/>    
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                              <div class="input-group-text">
+                                <i class="fas fa-map-marker-alt"></i>
+                              </div>
+                            </div>
+                            <input id="iMesjidName" class="form-control form-control-lg" 
+                            type="text" placeholder="Mesjid Name"/>    
                         </div>
                     </div>
 
@@ -127,7 +182,35 @@
                             type="text" placeholder="Isha..."/>    
                         </div>
                     </div>
+               
+
+                <div class="col-sm-12">
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
+                            <i class="fas fa-map-marker-alt"></i>
+                          </div>
+                        </div>
+                        <input id="ihadithArabic" class="form-control form-control-lg" 
+                        type="text" placeholder="Hadith of Week (Arabic)..."/>    
+                    </div>
                 </div>
+            
+
+            <div class="col-sm-12">
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i class="fas fa-map-marker-alt"></i>
+                      </div>
+                    </div>
+                    <input id="ihadithEnglish" class="form-control form-control-lg" 
+                    type="text" placeholder="Hadith of Week (English)..."/>    
+                </div>
+            </div>
+        </div>
+
+
                 <div id="feedback"></div>
 
             </div>
@@ -158,14 +241,7 @@
             </div>
         </div>
         
-        <marquee class="mt-3 mb-3" direction="right">
-            <h2>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                 &nbsp;&nbsp;&nbsp; اِنَّ الصَّلٰوةَ كَانَتْ عَلَى الْمُؤْمِنِيْنَ كِتٰبًا مَّوْقُوْتًا - &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            فَسُبْحٰنَ اللّٰهِ حِيْنَ تُمْسُوْنَ وَحِيْنَ تُصْبِحُوْنَ - Q.S. An-Nisa/4: 103: 17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                &nbsp;&nbsp;- فَسُبْحٰنَ اللّٰهِ حِيْنَ تُمْسُوْنَ وَحِيْنَ تُصْبِحُوْنَ  - Q.S. Ar-Rum/30: 17
-            </h2>
-        </marquee>
+
 
         <div class="row mb-4 mt-4">
             <!-- Fajr -->
@@ -246,6 +322,18 @@
                 </div>
             </div>
         </div>
+
+        <marquee class="mt-4 " direction="right">
+            <h2 id="hadithArabic">
+                /
+            </h2>
+        </marquee>
+
+        <marquee class=" mb-3" direction="left">
+            <h2 id="hadithEnglish">
+                /
+              </h2>
+        </marquee>
 
     </div>
 

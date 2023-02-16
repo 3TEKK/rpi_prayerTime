@@ -16,6 +16,10 @@ var iMaghrib = document.getElementById('iMaghrib')
 var iIsha = document.getElementById('iIsha')
 
 //
+var iMesjidName = document.getElementById('iMesjidName')
+var ihadithEnglish = document.getElementById('ihadithEnglish')
+var ihadithArabic = document.getElementById('ihadithArabic')
+//
 var send = document.getElementById('send')
 var feedback = document.getElementById('feedback')
 
@@ -30,11 +34,19 @@ var Isha = document.getElementById('Isha')
 var tanggalM = document.getElementById('tanggalM')
 var tanggalH = document.getElementById('tanggalH')
 
+//
+var mesjidName = document.getElementById('mesjidName')
+var hadithEnglish = document.getElementById('hadithEnglish')
+var hadithArabic = document.getElementById('hadithArabic')
 
 
-//var sunrise = document.getElementById('sunrise')
-
-
+//popup
+$(function () {
+    $('#myModal').modal('show');
+    setTimeout(function () {
+        $('#myModal').modal('hide');
+    }, 5000);
+});
 
 // emit button click events
 send.addEventListener('click', ()=>{
@@ -46,6 +58,10 @@ send.addEventListener('click', ()=>{
         iAsr: iAsr.value,
         iMaghrib: iMaghrib.value,
         iIsha: iIsha.value,
+
+        iMesjidName: iMesjidName.value,
+        ihadithEnglish:ihadithEnglish.value,
+        ihadithArabic: ihadithArabic.value,
     })
 })
 
@@ -64,6 +80,11 @@ socket.on('chat', (data)=>{
     Asr.innerHTML = `${data.iAsr}`
     Maghrib.innerHTML = `${data.iMaghrib}`
     Isha.innerHTML = `${data.iIsha}`
+
+    mesjidName.innerHTML = `${data.iMesjidName}`
+    hadithArabic.innerHTML = `${data.ihadithArabic}`
+    hadithEnglish.innerHTML = `${data.ihadithEnglish}`
+
     feedback.innerHTML = ''
 
     // get api for incoming city

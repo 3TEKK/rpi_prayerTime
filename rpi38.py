@@ -2,10 +2,11 @@ import datetime
 import requests
 import time as delay
 from pygame import mixer, time
+from pygame.locals import *
 
 # load azan.mp3
 mixer.init()
-mixer.music.load('C:/Users/HP/Downloads/RasPi_Ramadhan_INDONESIA/azan.mp3')
+mixer.music.load('/home/ahmed/Desktop/Git/rpi_prayerTime/azan.mp3')
 
 # request aladhan api
 url = 'http://api.aladhan.com/v1/timingsByCity?city=Tangerang Selatan&country=Indonesia&method=5'

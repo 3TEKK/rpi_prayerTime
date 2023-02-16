@@ -6,7 +6,7 @@ from pygame import mixer, time
 # load azan.mp3
 mixer.init()
 # mixer.music.load('C:/Users/HP/Downloads/RasPi_Ramadhan_INDONESIA/azan.mp3')
-mixer.music.load('/home/pi/RPi_Ramadan_PrayerTimes/azan.mp3')
+mixer.music.load('/home/ahmed/Desktop/Git/rpi_prayerTime/azan.mp3')
 
 # request aladhan api
 url = 'http://api.aladhan.com/v1/timingsByCity?city=Bengkulu&country=Indonesia&method=5'
