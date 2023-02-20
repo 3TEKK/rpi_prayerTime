@@ -40,13 +40,12 @@ var hadithEnglish = document.getElementById('hadithEnglish')
 var hadithArabic = document.getElementById('hadithArabic')
 
 
-//popup
-$(function () {
-    $('#myModal').modal('show');
-    setTimeout(function () {
-        $('#myModal').modal('hide');
-    }, 5000);
-});
+
+
+function openModal(){
+    $("#exampleModalLong").modal();
+    setTimeout(function(){ $("#exampleModalLong").modal("hide"); }, 5000);
+}
 
 // emit button click events
 send.addEventListener('click', ()=>{
