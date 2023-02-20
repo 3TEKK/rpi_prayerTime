@@ -25,7 +25,13 @@
     <link href="/styles.css" rel="stylesheet"/>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js'></script>
 
+    <!-- Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+
 </head>
+
 <body>
     <div class="mt-3 d-flex justify-content-center">
         <div>
@@ -33,7 +39,7 @@
         </div>
         <h1 >
             <p id="mesjidName" >Vaasa Islamic society</p>
-            Prayer Times
+             - Prayer Times
             <!-- button trigger modal -->
             <button type="button" class="btn-lg btn" style="background-color:transparent"  data-toggle="modal" data-target="#exampleModalCenter">
                 <i class="fas fa-cog"></i>&nbsp;
@@ -43,39 +49,32 @@
     </div>
    
     <!-- Modal -->
-    <div class="container" >
-        <!-- Trigger the modal with a button  -->
-        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">popup</button>
-        
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" role="dialog">
-          <div class="modal-dialog">
-          
-            <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                
-              </div>
-              <div class="modal-body">
-                <div>
-                    <img src="/img/VIS.jpg" class="rounded img-responsiv" style="max-width:20%;" alt="logo">
-                </div>
-                <div>
-                    <img src="/img/phoneoff.jpg" class="rounded img-responsiv" style="max-width:70%;" alt="logo">
-                </div>
-                <p style="color:black;">Some text in the modal.Some text in the modal.Some text in the modal.Some text in the modal.Some text in the modal.Some text in the modal.</p>
-                <p>Some text in the modal.</p>
-                <p>Some text in the modal.Some text in the modal.Some text in the modal.Some text in the modal.Some text in the modal.Some text in the modal.</p>
-              </div>
+    <button type="button" class="btn btn-primary" onclick="openModal()" data-target="#exampleModalLong">
+        Launch demo modal
+      </button>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
               
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-            
+            <div class="modal-body">
+              <img src="/img/VIS.jpg" class="rounded img-responsiv" style="max-width:20%;" alt="logo">
+              <p> <h1>Prayer Time</h1> Advice me cousin an spring of needed. Tell use paid law ever yet new. Meant to learn of vexed if style allow he there. 
+                Tiled man stand tears ten joy there terms any widen. Procuring continued suspicion its ten. 
+                Pursuit brother are had fifteen distant has. Early had add equal china quiet visit. Appear an manner as no 
+                limits either praise in. In in written on charmed justice is amiable farther besides. Law insensible middletons 
+                unsatiable for apartments boy delightful unreserved.</p>
+              <img src="/img/phoneoff.jpg" alt="">
+            </div>
+    
           </div>
         </div>
-        
       </div>
-    <!-- Modal -->
 
 
 
@@ -225,7 +224,7 @@
     </div>
     
     <!-- output -->
-    <div class="container " style="text-align: left;">
+    <div class="container" style="text-align: left;">
         
         <div class="row">
             <div class="col-lg-6">
@@ -245,8 +244,8 @@
 
         <div class="row mb-4 mt-4">
             <!-- Fajr -->
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <div class="card text-white" style="background-color: white;">
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="card text-white" style="background-color: black;">
                     <img class="card-img" 
                     src="img/a0.png" 
                     alt="Card image">
@@ -258,20 +257,20 @@
             </div>
             
             <!-- Sunrise -->
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <div class="card text-white" style="background-color: white;">
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="card text-white" style="background-color: black;">
                     <img class="card-img" 
                     src="img/a1.png" 
                     alt="Card image">
                     <div class="card-img-overlay">
-                        <h1 class="card-title text-black">Sunrise شروق</h1>
+                        <h1 class="card-title">Sunrise شروق</h1>
                         <h1 id="Sunrise" class="text-right display-4"></h1>
                     </div>
                 </div>
             </div>
             <!-- Dzuhur -->
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <div class="card text-white" style="background-color: white;">
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="card text-white" style="background-color: black;">
                     <img class="card-img" 
                     src="img/a2.png" 
                     alt="Card image">
@@ -281,9 +280,13 @@
                     </div>
                 </div>
             </div>
+            
+        </div>
+
+        <div class="row">
             <!-- Asar -->
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <div class="card text-white" style="background-color: white;">
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="card text-white" style="background-color: black;">
                     <img class="card-img" 
                     src="img/a3.png" 
                     alt="Card image">
@@ -293,29 +296,9 @@
                     </div>
                 </div>
             </div>
-            
-        </div>
-
-        <div class="row">
-
-             <!-- RECENT / NEW 
-                from here-->            
-             <!-- Sunset -->
-             <div class="col-sm-12 col-md-6 col-lg-3">
-                <div class="card text-white" style="background-color: white;">
-                    <img class="card-img" 
-                    src="img/a4.png" 
-                    alt="Card image">
-                    <div class="card-img-overlay">
-                        <h1 class="card-title">Sunset غروب</h1>
-                        <h1 id="Sunset" class="text-right display-4"></h1>
-                    </div>
-                </div>
-            </div>
-            <!--till here-->
             <!-- Magrib -->
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <div class="card text-white" style="background-color: white;">
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="card text-white" style="background-color: black;">
                     <img class="card-img" 
                     src="img/a4.png" 
                     alt="Card image">
@@ -326,8 +309,8 @@
                 </div>
             </div>
             <!-- Isya -->
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <div class="card text-white" style="background-color: white;">
+            <div class="col-sm-12 col-md-4 col-lg-4">
+                <div class="card text-white" style="background-color: black;">
                     <img class="card-img" 
                     src="img/a5.png" 
                     alt="Card image">
@@ -337,19 +320,6 @@
                     </div>
                 </div>
             </div>
-            <!-- Juma -->
-            <div class="col-sm-12 col-md-6 col-lg-3">
-                <div class="card text-white" style="background-color: white;">
-                    <img class="card-img" 
-                    src="img/a2.png" 
-                    alt="Card image">
-                    <div class="card-img-overlay">
-                        <h1 class="card-title">Juma جمعة</h1>
-                        <h1 id="Juma" class="text-right display-4"></h1>
-                    </div>
-                </div>
-            </div>
-
         </div>
 
         <marquee class="mt-4 " direction="right">
@@ -365,7 +335,9 @@
         </marquee>
 
     </div>
-
+    <div>
+        Bank information
+    </div>
     <script src='/chat.js'></script>
     <script src='/clock.js'></script>
     <script src='/getapi.js'></script>
