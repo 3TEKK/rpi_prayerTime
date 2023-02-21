@@ -12,6 +12,14 @@ mixer.init()
 # mixer.music.load('C:/Users/HP/Downloads/RasPi_Ramadhan_INDONESIA/azan.mp3')
 mixer.music.load('/home/ahmed/Desktop/Git/rpi_prayerTime/azan.mp3')
 
+Fajr = ""
+Duhur = ""
+Asr = ""
+Meghrib = ""
+Isha = ""
+
+
+
 #<strong>#Set up Flask</strong>:
 app = Flask(__name__)
 #<strong>#Set up Flask to bypass CORS</strong>:
@@ -26,18 +34,29 @@ def postME():
     return data 
 
 def check(data):
-    x = "cool"
+    global Fajr 
+    Fajr= data
     currentDateAndTime = datetime.now()
     currentTime = currentDateAndTime.strftime("%H:%M")
     print(currentTime)
-    if (data == currentTime):
-        y = data+ x
-        print(y)
+    if (Fajr == currentTime):
+        #y = data+ x
+        print(Fajr)
         mixer.music.play()
+    while True:
+        currentDateAndTime = datetime.now()
+        currentTime = currentDateAndTime.strftime("%H:%M")
+        if (Fajr == currentTime):
+            #y = data+ x
+            #print(Fajr)
+            mixer.music.play()
+        #print(Fajr)
 
 
-    
-    
 
 if __name__ == "__main__": 
     app.run(debug=True)
+
+
+
+    
