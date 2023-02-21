@@ -38,14 +38,10 @@ def check(data):
     Fajr= data
     currentDateAndTime = datetime.now()
     currentTime = currentDateAndTime.strftime("%H:%M")
-    print(currentTime)
-    if (Fajr == currentTime):
-        #y = data+ x
-        print(Fajr)
-        mixer.music.play()
     while True:
         currentDateAndTime = datetime.now()
         currentTime = currentDateAndTime.strftime("%H:%M")
+        
         if (Fajr == currentTime):
             #y = data+ x
             #print(Fajr)
