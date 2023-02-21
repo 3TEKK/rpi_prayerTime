@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- 
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Prayer Time Display</title>
 
     <!-- bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -21,9 +29,9 @@
 
     <!-- fontawesome -->
     <script src="https://kit.fontawesome.com/4a822b1d6a.js" crossorigin="anonymous"></script>
- 
+
     <!-- style & web socket -->
-    <link href="/styles.css" rel="stylesheet"/>
+    <link href="/styles.css" rel="stylesheet" />
     <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js'></script>
 
     <!-- Modal -->
@@ -39,194 +47,201 @@
             <img src="/img/VIS.jpg" class="rounded img-responsiv" style="max-width:20%;" alt="logo">
         </div>
         <h1>
-            <p id="mesjidName" >Vaasa Islamic society</p>
+            <p id="mesjidName">Vaasa Islamic society</p>
             Prayer Times
             <!-- button trigger modal -->
-            <button type="button" class="btn-lg btn" style="background-color:transparent"  data-toggle="modal" data-target="#exampleModalCenter">
+            <button type="button" class="btn-lg btn" style="background-color:transparent" data-toggle="modal"
+                data-target="#exampleModalCenter">
                 <i class="fas fa-cog"></i>&nbsp;
                 ⚙️
             </button>
         </h1>
     </div>
-   
+
     <!-- Modal -->
     <button type="button" class="btn btn-primary" onclick="openModal()" data-target="#exampleModalLong">
         Launch demo modal
-      </button>
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    </button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div class="modal-content">
+                <div class="modal-header">
+
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="/img/VIS.jpg" class="rounded img-responsiv" style="max-width:20%;" alt="logo">
+                    <p>
+                    <h1>Prayer Time</h1> Advice me cousin an spring of needed. Tell use paid law ever yet new. Meant to
+                    learn of vexed if style allow he there.
+                    Tiled man stand tears ten joy there terms any widen. Procuring continued suspicion its ten.
+                    Pursuit brother are had fifteen distant has. Early had add equal china quiet visit. Appear an manner
+                    as no
+                    limits either praise in. In in written on charmed justice is amiable farther besides. Law insensible
+                    middletons
+                    unsatiable for apartments boy delightful unreserved.</p>
+                    <img src="/img/phoneoff.jpg" alt="">
+                </div>
+
             </div>
-            <div class="modal-body">
-              <img src="/img/VIS.jpg" class="rounded img-responsiv" style="max-width:20%;" alt="logo">
-              <p> <h1>Prayer Time</h1> Advice me cousin an spring of needed. Tell use paid law ever yet new. Meant to learn of vexed if style allow he there. 
-                Tiled man stand tears ten joy there terms any widen. Procuring continued suspicion its ten. 
-                Pursuit brother are had fifteen distant has. Early had add equal china quiet visit. Appear an manner as no 
-                limits either praise in. In in written on charmed justice is amiable farther besides. Law insensible middletons 
-                unsatiable for apartments boy delightful unreserved.</p>
-              <img src="/img/phoneoff.jpg" alt="">
-            </div>
-    
-          </div>
         </div>
-      </div>
+    </div>
 
 
 
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">
-                <i class="iconify"  data-inline="true"></i>
-                Settings
-            </h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            </div>
-            <div class="modal-body">
-
-                <div class="form-group row">
-                    <!-- kota -->
-                    <div class="col-sm-12">
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text">
-                                <i class="fas fa-map-marker-alt"></i>
-                              </div>
-                            </div>
-                            <input id="message" class="form-control form-control-lg" 
-                            type="text" placeholder="Enter city name ..."/>    
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12">
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text">
-                                <i class="fas fa-map-marker-alt"></i>
-                              </div>
-                            </div>
-                            <input id="iMesjidName" class="form-control form-control-lg" 
-                            type="text" placeholder="Mesjid Name"/>    
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12">
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text">
-                                <i class="fas fa-map-marker-alt"></i>
-                              </div>
-                            </div>
-                            <input id="iFajr" class="form-control form-control-lg" 
-                            type="text" placeholder="Fajr ..."/>    
-                        </div>
-                    </div>
-
-
-                    
-
-                    <div class="col-sm-12">
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text">
-                                <i class="fas fa-map-marker-alt"></i>
-                              </div>
-                            </div>
-                            <input id="iDuhur" class="form-control form-control-lg" 
-                            type="text" placeholder="Duhur..."/>    
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12">
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text">
-                                <i class="fas fa-map-marker-alt"></i>
-                              </div>
-                            </div>
-                            <input id="iAsr" class="form-control form-control-lg" 
-                            type="text" placeholder="Asr..."/>    
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12">
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text">
-                                <i class="fas fa-map-marker-alt"></i>
-                              </div>
-                            </div>
-                            <input id="iMaghrib" class="form-control form-control-lg" 
-                            type="text" placeholder="Maghrib..."/>    
-                        </div>
-                    </div>
-
-                    <div class="col-sm-12">
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                              <div class="input-group-text">
-                                <i class="fas fa-map-marker-alt"></i>
-                              </div>
-                            </div>
-                            <input id="iIsha" class="form-control form-control-lg" 
-                            type="text" placeholder="Isha..."/>    
-                        </div>
-                    </div>
-               
-
-                <div class="col-sm-12">
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                          <div class="input-group-text">
-                            <i class="fas fa-map-marker-alt"></i>
-                          </div>
-                        </div>
-                        <input id="ihadithArabic" class="form-control form-control-lg" 
-                        type="text" placeholder="Hadith of Week (Arabic)..."/>    
-                    </div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">
+                        <i class="iconify" data-inline="true"></i>
+                        Settings
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-            
+                <div class="modal-body">
 
-            <div class="col-sm-12">
-                <div class="input-group mb-2">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
-                        <i class="fas fa-map-marker-alt"></i>
-                      </div>
+                    <div class="form-group row">
+                        <!-- kota -->
+                        <div class="col-sm-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                </div>
+                                <input id="message" class="form-control form-control-lg" type="text"
+                                    placeholder="Enter city name ..." />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                </div>
+                                <input id="iMesjidName" class="form-control form-control-lg" type="text"
+                                    placeholder="Mesjid Name" />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                </div>
+                                <input id="iFajr" class="form-control form-control-lg" type="text"
+                                    placeholder="Fajr ..." />
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="col-sm-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                </div>
+                                <input id="iDuhur" class="form-control form-control-lg" type="text"
+                                    placeholder="Duhur..." />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                </div>
+                                <input id="iAsr" class="form-control form-control-lg" type="text"
+                                    placeholder="Asr..." />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                </div>
+                                <input id="iMaghrib" class="form-control form-control-lg" type="text"
+                                    placeholder="Maghrib..." />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                </div>
+                                <input id="iIsha" class="form-control form-control-lg" type="text"
+                                    placeholder="Isha..." />
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                </div>
+                                <input id="ihadithArabic" class="form-control form-control-lg" type="text"
+                                    placeholder="Hadith of Week (Arabic)..." />
+                            </div>
+                        </div>
+
+
+                        <div class="col-sm-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                </div>
+                                <input id="ihadithEnglish" class="form-control form-control-lg" type="text"
+                                    placeholder="Hadith of Week (English)..." />
+                            </div>
+                        </div>
                     </div>
-                    <input id="ihadithEnglish" class="form-control form-control-lg" 
-                    type="text" placeholder="Hadith of Week (English)..."/>    
+
+
+                    <div id="feedback"></div>
+
+                </div>
+                <div class="modal-footer">
+                    <button id="send" type="button" class="btn btn-success">
+                        <i class="fas fa-check-circle"></i>&nbsp;
+                        Apply
+                    </button>
                 </div>
             </div>
-        </div>
-
-
-                <div id="feedback"></div>
-
-            </div>
-            <div class="modal-footer">
-                <button id="send" type="button" class="btn btn-success">
-                    <i class="fas fa-check-circle"></i>&nbsp;
-                    Apply
-                </button>
-            </div>
-        </div>
         </div>
     </div>
-    
+
     <!-- output -->
     <div class="container" style="text-align: left;">
-        
+
         <div class="row">
             <div class="col-lg-6">
                 <h1 id="kota" class="display-4">Vaasa</h1>
@@ -246,23 +261,19 @@
         <div class="row mb-4 mt-4">
             <!-- Fajr -->
             <div class="col-sm-12 col-md-4 col-lg-3">
-                <div class="card text-white" style="background-color: black;">
-                    <img class="card-img" 
-                    src="img/a0.png" 
-                    alt="Card image">
+                <div class="card text-white">
+                    <img class="card-img" src="img/PrayerCard-update.png" alt="Card image">
                     <div class="card-img-overlay">
                         <h1 class="card-title">Fajr فجر</h1>
                         <h1 id="Fajr" class="text-right display-4"></h1>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Sunrise -->
             <div class="col-sm-12 col-md-4 col-lg-3">
-                <div class="card text-white" style="background-color: black;">
-                    <img class="card-img" 
-                    src="img/a1.png" 
-                    alt="Card image">
+                <div class="card text-white">
+                    <img class="card-img border-0"  src="img/PrayerCard-update.png" alt="Card image">
                     <div class="card-img-overlay">
                         <h1 class="card-title">Sunrise شروق</h1>
                         <h1 id="Sunrise" class="text-right display-4"></h1>
@@ -271,10 +282,8 @@
             </div>
             <!-- Dzuhur -->
             <div class="col-sm-12 col-md-4 col-lg-3">
-                <div class="card text-white" style="background-color: black;">
-                    <img class="card-img" 
-                    src="img/a2.png" 
-                    alt="Card image">
+                <div class="card text-white">
+                    <img class="card-img" src="img/PrayerCard-update.png" alt="Card image">
                     <div class="card-img-overlay">
                         <h1 class="card-title">Dzuhur الظهر</h1>
                         <h1 id="Duhur" class="text-right display-4"></h1>
@@ -283,26 +292,22 @@
             </div>
             <!-- Asar -->
             <div class="col-sm-12 col-md-4 col-lg-3">
-                <div class="card text-white" style="background-color: black;">
-                    <img class="card-img" 
-                    src="img/a3.png" 
-                    alt="Card image">
+                <div class="card text-white">
+                    <img class="card-img" src="img/PrayerCard-update.png" alt="Card image">
                     <div class="card-img-overlay">
                         <h1 class="card-title">Asr العصر</h1>
                         <h1 id="Asr" class="text-right display-4"></h1>
                     </div>
                 </div>
             </div>
-            
+
         </div>
 
         <div class="row">
             <!-- Sunset -->
             <div class="col-sm-12 col-md-4 col-lg-3">
-                <div class="card text-white" style="background-color: black;">
-                    <img class="card-img" 
-                    src="img/a4.png" 
-                    alt="Card image">
+                <div class="card text-white">
+                    <img class="card-img" src="img/PrayerCard-update.png" alt="Card image">
                     <div class="card-img-overlay">
                         <h1 class="card-title">Sunset غروب</h1>
                         <h1 id="Sunset" class="text-right display-4"></h1>
@@ -311,10 +316,8 @@
             </div>
             <!-- Magrib -->
             <div class="col-sm-12 col-md-4 col-lg-3">
-                <div class="card text-white" style="background-color: black;">
-                    <img class="card-img" 
-                    src="img/a4.png" 
-                    alt="Card image">
+                <div class="card text-white">
+                    <img class="card-img" src="img/PrayerCard-update.png" alt="Card image">
                     <div class="card-img-overlay">
                         <h1 class="card-title">Maghrib المغرب</h1>
                         <h1 id="Maghrib" class="text-right display-4"></h1>
@@ -323,22 +326,18 @@
             </div>
             <!-- Isya -->
             <div class="col-sm-12 col-md-4 col-lg-3">
-                <div class="card text-white" style="background-color: black;">
-                    <img class="card-img" 
-                    src="img/a5.png" 
-                    alt="Card image">
+                <div class="card text-white">
+                    <img class="card-img" src="img/PrayerCard-update.png" alt="Card image">
                     <div class="card-img-overlay">
                         <h1 class="card-title">Isha العشاء</h1>
                         <h1 id="Isha" class="text-right display-4"></h1>
                     </div>
                 </div>
             </div>
-             <!-- Juma -->
-             <div class="col-sm-12 col-md-4 col-lg-3">
-                <div class="card text-white" style="background-color: black;">
-                    <img class="card-img" 
-                    src="img/a2.png" 
-                    alt="Card image">
+            <!-- Juma -->
+            <div class="col-sm-12 col-md-4 col-lg-3">
+                <div class="card text-white">
+                    <img class="card-img" src="img/PrayerCard-update.png" alt="Card image">
                     <div class="card-img-overlay">
                         <h1 class="card-title">Juma جمعة</h1>
                         <h1 id="Juma" class="text-right display-4"></h1>
@@ -356,15 +355,23 @@
         <marquee class=" mb-3" direction="left">
             <h2 id="hadithEnglish">
                 /
-              </h2>
+            </h2>
         </marquee>
 
     </div>
-    <div>
-        Bank information
+    <div style="background-color:#9fca81; text-align:center; padding: 30px;">
+        <h1><b>Become a part of something more</b></h1>
+        <h2>We rely on our generous community to create a lasting impact and ensure the continuous operations of your
+            Masjid as the gathering place, school, and house of worship for Muslims across the Triangle.</h2>
+        </h2>
+        <img src="/img/qr_code.jpg" class="rounded img-responsiv" style=" width: 150px;" class="col-sm-12 col-md-4 col-lg-6" alt="">
+        <h1 style="text-align:left;" class="col-sm-12 col-md-4 col-lg-6">
+            Send your donation to Vaasa Islamic Society
+            <b>IBAN: FI8720521800134380 </b></h1>
     </div>
     <script src='/chat.js'></script>
     <script src='/clock.js'></script>
     <script src='/getapi.js'></script>
 </body>
+
 </html>
