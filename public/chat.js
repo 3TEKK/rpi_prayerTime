@@ -1,7 +1,7 @@
 // socket io in front end
 
 // Make connection
-var socket = io.connect('http://192.168.114.65:1234/')
+var socket = io.connect('http://192.168.195.1:1234/')
 // var socket = io.connect('http://192.168.43.163:1234') 
 // change with your RPi IP address
 
@@ -29,6 +29,7 @@ var Fajr = document.getElementById('Fajr')
 var Sunrise = document.getElementById('Sunrise')
 var Duhur = document.getElementById('Duhur')
 var Asr = document.getElementById('Asr')
+var Sunset = document.getElementById('Sunset')
 var Magrib = document.getElementById('Magrib')
 var Isha = document.getElementById('Isha')
 var tanggalM = document.getElementById('tanggalM')
@@ -96,6 +97,7 @@ socket.on('chat', (data)=>{
         tanggalH.innerHTML = `${data.data.date.hijri.day} ${data.data.date.hijri.month.en} ${data.data.date.hijri.year}`        
         //subuh.innerHTML = `${data.data.timings.Fajr}`
         Sunrise.innerHTML = `${data.data.timings.Sunrise}`
+        Sunset.innerHTML = `${data.data.timings.Sunset}`
         //dzuhur.innerHTML = `${data.data.timings.Dhuhr}`
         // asar.innerHTML = `${data.data.timings.Asr}`
         // magrib.innerHTML = `${data.data.timings.Maghrib}`

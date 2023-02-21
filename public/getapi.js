@@ -7,6 +7,7 @@ var subuh = document.getElementById('subuh')
 var sunrise = document.getElementById('sunrise')
 var dzuhur = document.getElementById('dzuhur')
 var asar = document.getElementById('asar')
+var sunset = document.getElementById('sunset')
 var magrib = document.getElementById('magrib')
 var isya = document.getElementById('isya')
 
@@ -24,6 +25,7 @@ fetch(url).then(function (response) {
     sunrise.innerHTML = `${data.data.timings.Sunrise}`
     dzuhur.innerHTML = `${data.data.timings.Dhuhr}`
     asar.innerHTML = `${data.data.timings.Asr}`
+    sunset.innerHTML = `${data.data.timings.Sunset}`
     magrib.innerHTML = `${data.data.timings.Maghrib}`
     isya.innerHTML = `${data.data.timings.Isha}`
     console.log(data);
