@@ -1,7 +1,7 @@
 // socket io in front end
 
 // Make connection
-var socket = io.connect('http://192.168.114.65:1234/')
+var socket = io.connect('http://192.168.195.1:1234/')
 // var socket = io.connect('http://192.168.43.163:1234') 
 // change with your RPi IP address
 
@@ -9,6 +9,8 @@ var socket = io.connect('http://192.168.114.65:1234/')
 var message = document.getElementById('message')
 //
 var iFajr = document.getElementById('iFajr')
+var AFajr = document.getElementById('AFajr')
+
 //var iSunrise = document.getElementById('iSunrise')
 var iDuhur = document.getElementById('iDuhur')
 var iAsr = document.getElementById('iAsr')
@@ -73,13 +75,13 @@ message.addEventListener('keypress', ()=>{
 // listen for events
 socket.on('chat', (data)=>{
     kota.innerHTML = `${data.message}`
-    Fajr.innerHTML = `${data.iFajr}`
+    Fajr.innerHTML = `Prayer ${data.iFajr}`
     //
     //Sunrise.innerHTML = `${data.iSunrise}`
-    Duhur.innerHTML = `${data.iDuhur}`
-    Asr.innerHTML = `${data.iAsr}`
-    Maghrib.innerHTML = `${data.iMaghrib}`
-    Isha.innerHTML = `${data.iIsha}`
+    Duhur.innerHTML = `Prayer ${data.iDuhur}`
+    Asr.innerHTML = `Prayer ${data.iAsr}`
+    Maghrib.innerHTML = `Prayer ${data.iMaghrib}`
+    Isha.innerHTML = `Prayer ${data.iIsha}`
 
     mesjidName.innerHTML = `${data.iMesjidName}`
     hadithArabic.innerHTML = `${data.ihadithArabic}`
@@ -121,7 +123,7 @@ socket.on('chat', (data)=>{
     }).then(function (data) {
         tanggalM.innerHTML = `${data.data.date.gregorian.day} ${data.data.date.gregorian.month.en} ${data.data.date.gregorian.year}`
         tanggalH.innerHTML = `${data.data.date.hijri.day} ${data.data.date.hijri.month.en} ${data.data.date.hijri.year}`        
-        //subuh.innerHTML = `${data.data.timings.Fajr}`
+        AFajr.innerHTML = `Azan ${data.data.timings.Fajr}` 
         Sunrise.innerHTML = `${data.data.timings.Sunrise}`
         Sunset.innerHTML = `${data.data.timings.Sunset}`
         //dzuhur.innerHTML = `${data.data.timings.Dhuhr}`
