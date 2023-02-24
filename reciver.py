@@ -3,9 +3,10 @@ from flask_cors import CORS
 import json
 import datetime
 import requests
-import time as delay
+import time 
 from pygame import mixer, time
 from datetime import datetime
+import threading
 
 # load azan.mp3
 mixer.init()
@@ -30,23 +31,28 @@ cors = CORS(app)
 def postME():
     data = request.get_json()
     check(data)
+    check_thread = threading.Thread(target=check, args=(data,))
+    check_thread.start()
     data = jsonify(data)
     return data 
 
 def check(data):
-    global Fajr 
-    Fajr= data
+    global Fajr,Duhur,Asr,Meghrib,Isha
+    Fajr,Duhur,Asr,Meghrib,Isha = data
     currentDateAndTime = datetime.now()
     currentTime = currentDateAndTime.strftime("%H:%M")
     while True:
         currentDateAndTime = datetime.now()
         currentTime = currentDateAndTime.strftime("%H:%M")
         
-        if (Fajr == currentTime):
+        if Fajr == currentTime or Duhur == currentTime or Asr == currentTime or Meghrib == currentTime or Isha == currentTime:
             #y = data+ x
             #print(Fajr)
             mixer.music.play()
-        #print(Fajr)
+            # enable threading to loop for next round checkup
+            #thread = threading.Thread(target=check(), args=(data,))
+            #thread.start()
+            return data
 
 
 
