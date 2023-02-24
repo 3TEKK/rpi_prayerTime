@@ -1,7 +1,7 @@
 // socket io in front end
 
 // Make connection
-var socket = io.connect('http://192.168.195.1:1234/')
+var socket = io.connect('http://192.168.114.65:1234/')
 // var socket = io.connect('http://192.168.43.163:1234') 
 // change with your RPi IP address
 
@@ -100,33 +100,17 @@ socket.on('chat', (data)=>{
     DCB.innerHTML = `€${data.iDCB}`
 
 
+    //pop up chec
+    var date = new Date()
+    var hr = date.getHours()
+    var min = date.getMinutes()
+    if (`${hr}:${min}` == Fajr.innerHTML.value) {
+        openModal()
+    }
+    console.log(`${hr}:${min}`)
+
+    //end pop up check
     feedback.innerHTML = ''
-
-    //test py
-
-    const Data = `${data.iFajr}`
-       fetch("http://127.0.0.1:5000/receiver", 
-       {
-            method: 'POST',
-            headers: {
-                    'Content-type': 'application/json',
-                    'Accept': 'application/json'
-                    },
-    
-            body:JSON.stringify(Data)}).then(res=>{
-            if(res.ok){
-                return res.json()
-            }else{
-                alert("something is wrong")
-            }
-            }).then(jsonResponse=>{
-            
-            // Log the response data in the console
-            console.log(jsonResponse)
-            } 
-            ).catch((err) => console.error(err));
-       
-    //end test py
 
     // get api for incoming city
     var url = `http://api.aladhan.com/v1/timingsByCity?city=${data.message}&country=Indonesia&method=5`
@@ -147,6 +131,39 @@ socket.on('chat', (data)=>{
     }).catch(function (err) {
         console.warn('Something went wrong.', err);
     });
+
+    //py server
+    const prayerTimes = [`${data.iFajr}`,`${data.iDuhur}`,`${data.iAsr}`,`${data.iMaghrib}`,`${data.iIsha}`]
+    const Data = `${data.iFajr}`
+
+   // while (true) {
+    function sendPrayerTimes() {
+        fetch("http://127.0.0.1:5000/receiver", {
+          method: 'POST',
+          headers: {
+            'Content-type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(prayerTimes)
+        }).then(res => {
+          if (res.ok) {
+            return res.json()
+          } else {
+            alert("something is wrong")
+          }
+        }).then(jsonResponse => {
+          // Log the response data in the console
+          openModal()
+          console.log(jsonResponse)
+        }).catch((err) => console.error(err)).finally(() => {
+          setTimeout(sendPrayerTimes, 100000); // Send the request again after 5 seconds
+        });
+      }
+      
+      sendPrayerTimes(); // Call the function to start sending requests
+      
+   // }
+    //end py server
 })
 
 socket.on('typing', (data)=>{

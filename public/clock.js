@@ -2,6 +2,12 @@
 
 var clock = document.getElementById('jam')
 
+var Fajr = document.getElementById('Fajr')
+var Duhur = document.getElementById('Duhur')
+var Asr = document.getElementById('Asr')
+var Magrib = document.getElementById('Magrib')
+var Isha = document.getElementById('Isha')
+
 renderJam = function(){
     var waktu = new Date()
     var jam = waktu.getHours()
