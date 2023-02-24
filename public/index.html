@@ -42,26 +42,31 @@
 </head>
 
 <body>
-    <div class="mt-3 d-flex justify-content-center">
-        <div>
-            <img src="/img/VIS.png" class="rounded img-responsiv" style="max-width:50%;" alt="logo">
+    <div class="row">
+        <div class="mt-3 col-lg-4"   >
+            <img align= "left" src="/img/VIS.png" class="rounded img-responsiv" style="max-width:50%;" alt="logo">
         </div>
-        <h1>
-            <p id="mesjidName">Vaasa Islamic society</p>
-            Prayer Times
-            <!-- button trigger modal -->
-            <button type="button" class="btn-lg btn" style="background-color:transparent" data-toggle="modal"
-                data-target="#exampleModalCenter">
+        <div class="col-lg-4">
+            <h1 class=" " style="text-align:center;">
+                <p id="mesjidName">Vaasa Islamic society</p>- Prayer Times
+                <!-- button trigger modal -->
+            </h1>
+            <h1 class="mt-15"> Donation $</h1>
+        </div>
+        <div class=" col-lg-4">
+            <button type="button" class="btn-lg btn " style="background-color:transparent; text-align:right;" data-toggle="modal" data-target="#exampleModalCenter">
                 <i class="fas fa-cog"></i>&nbsp;
                 ⚙️
             </button>
-        </h1>
+            
+        </div>  
+            
     </div>
 
     <!-- Modal 
     <button type="button" class="btn btn-primary" onclick="openModal()" data-target="#exampleModalLong">
-        Launch demo modal-->
-    </button>
+        Launch demo modal
+    </button>-->
     <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
         aria-hidden="true">
@@ -255,16 +260,20 @@
     <div class="" style="text-align: left;">
 
         <div class="row">
-            <div class="col-lg-6">
-                <h1 id="kota" class=" display-4" style="padding-left: 80px;">Vaasa</h1>
+            <div class="col-lg-4">
+                <h1 id="kota" class=" display-4" style="padding-left: 100px;">Vaasa</h1>
                 <p class="lead">
-                    <b id="tanggalM" style="padding-left: 80px;"></b>
+                    <b id="tanggalM" style="padding-left: 100px;"></b>
                     /
                     <b id="tanggalH"></b>
                 </p>
             </div>
-            <div class="col-lg-6">
-                <h1 id='jam' style='text-align:right; padding-right: 80px;' class='display-4 text-right'></h1>
+            <div class="col-lg-4">
+                   <h1  style='text-align:center;'> Donation $</h1>
+            </div>
+            <div class="col-lg-4">
+                <h1 id='jam' style='text-align:right; padding-right: 100px;' class='display-6 text-right'></h1>
+                <h1  style='text-align:right; padding-right: 100px;' class="mt-15">Temprature</h1>
             </div>
         </div>
 
@@ -363,26 +372,20 @@
                 </div>
             </div>
         </div>
-            <marquee style="background-color:white;" class="mt-4 " direction="right">
-                <h2 id="hadithArabic">
-                    /
-                </h2>
-            </marquee>
-    
-            <marquee style="background-color:white;" class=" mb-3" direction="left">
-                <h2 id="hadithEnglish">
-                    /
-                </h2>
-            </marquee>
+        <marquee style="background-color:white;" class="mt-4 " direction="right">
+            <h2 id="hadithArabic">
+                /
+            </h2>
+        </marquee>
+
+        <marquee style="background-color:white;" class=" mb-3" direction="left">
+            <h2 id="hadithEnglish">
+                /
+            </h2>
+        </marquee>
 
     </div>
     <div style="background-color:#162f1c; text-align:center; padding: 30px;">
-        
-        <h2 style="color:white; text-align:left;">Those who spend their wealth in charity day and night, secretly and openly—their reward is with their Lord,
-            and there will be no fear for them, nor will they grieve.”
-            – The Holy Quran 2:274<br></h2>
-        <h2 style="color:white; text-align: right;">الَّذِينَ يُنفِقُونَ أَمْوَالَهُم بِاللَّيْلِ وَالنَّهَارِ سِرًّا وَعَلَانِيَةً فَلَهُمْ أَجْرُهُمْ عِندَ
-            رَبِّهِمْ وَلَا خَوْفٌ عَلَيْهِمْ وَلَا هُمْ يَحْزَنُونَ - القرآن الكريم 2:274</h2>
         <img src="/img/qr_code.jpg" class="rounded img-responsiv" style=" width: 150px;"
             class="col-sm-12 col-md-4 col-lg-6" alt="">
         <h1 style="text-align:left; color: white;" class="col-sm-12 col-md-4 col-lg-6">
