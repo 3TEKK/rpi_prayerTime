@@ -13,14 +13,23 @@ var AFajr = document.getElementById('AFajr')
 
 //var iSunrise = document.getElementById('iSunrise')
 var iDuhur = document.getElementById('iDuhur')
+var ADuhur = document.getElementById('ADuhur')
+
 var iAsr = document.getElementById('iAsr')
+var AAsr = document.getElementById('AAsr')
+
 var iMaghrib = document.getElementById('iMaghrib')
+var AMaghrib = document.getElementById('AMaghrib')
+
 var iIsha = document.getElementById('iIsha')
+var AIsha = document.getElementById('AIsha')
 
 //
 var iMesjidName = document.getElementById('iMesjidName')
 var ihadithEnglish = document.getElementById('ihadithEnglish')
 var ihadithArabic = document.getElementById('ihadithArabic')
+var iDCB = document.getElementById('iDCB')
+
 //
 var send = document.getElementById('send')
 var feedback = document.getElementById('feedback')
@@ -41,7 +50,7 @@ var tanggalH = document.getElementById('tanggalH')
 var mesjidName = document.getElementById('mesjidName')
 var hadithEnglish = document.getElementById('hadithEnglish')
 var hadithArabic = document.getElementById('hadithArabic')
-
+var DCB = document.getElementById('DCB')
 
 
 
@@ -64,6 +73,8 @@ send.addEventListener('click', ()=>{
         iMesjidName: iMesjidName.value,
         ihadithEnglish:ihadithEnglish.value,
         ihadithArabic: ihadithArabic.value,
+        iDCB: iDCB.value,
+
     })
 })
 
@@ -86,6 +97,8 @@ socket.on('chat', (data)=>{
     mesjidName.innerHTML = `${data.iMesjidName}`
     hadithArabic.innerHTML = `${data.ihadithArabic}`
     hadithEnglish.innerHTML = `${data.ihadithEnglish}`
+    DCB.innerHTML = `€${data.iDCB}`
+
 
     feedback.innerHTML = ''
 
@@ -126,10 +139,10 @@ socket.on('chat', (data)=>{
         AFajr.innerHTML = `Azan ${data.data.timings.Fajr}` 
         Sunrise.innerHTML = `${data.data.timings.Sunrise}`
         Sunset.innerHTML = `${data.data.timings.Sunset}`
-        //dzuhur.innerHTML = `${data.data.timings.Dhuhr}`
-        // asar.innerHTML = `${data.data.timings.Asr}`
-        // magrib.innerHTML = `${data.data.timings.Maghrib}`
-        // isya.innerHTML = `${data.data.timings.Isha}`
+        ADuhur.innerHTML = `Azan ${data.data.timings.Dhuhr}`
+        AAsar.innerHTML = `Azan ${data.data.timings.Asr}`
+        AMagrib.innerHTML = `Azan ${data.data.timings.Maghrib}`
+        AIsya.innerHTML = `Azan ${data.data.timings.Isha}`
         console.log(data);
     }).catch(function (err) {
         console.warn('Something went wrong.', err);
