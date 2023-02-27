@@ -2,7 +2,7 @@
 
 // Make connection
 
-var socket = io.connect('http://192.168.114.65:1234/')
+var socket = io.connect('http://192.168.195.1:1234/')
 
 
 // var socket = io.connect('http://192.168.43.163:1234') 
@@ -27,8 +27,8 @@ var AMaghrib = document.getElementById('AMaghrib')
 var iIsha = document.getElementById('iIsha')
 var AIsha = document.getElementById('AIsha')
 
-var iIsha = document.getElementById('iJuma')
-var AIsha = document.getElementById('AJuma')
+var iJuma = document.getElementById('iJuma')
+var AJuma = document.getElementById('AJuma')
 
 //
 var iMesjidName = document.getElementById('iMesjidName')
