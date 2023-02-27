@@ -43,8 +43,8 @@
 
 <body>
     <div class="row">
-        <div class="mt-3 col-lg-4"   >
-            <img align= "left" src="/img/VIS.png" class="rounded img-responsiv" style="max-width:50%;" alt="logo">
+        <div class="mt-3 col-lg-4">
+            <img align="left" src="/img/VIS.png" class="rounded img-responsiv" style="max-width:50%;" alt="logo">
         </div>
         <div class="col-lg-4">
             <h1 class=" " style="text-align:center;">
@@ -54,13 +54,14 @@
             <h1 class="mt-15"> Donation $</h1>
         </div>
         <div class=" col-lg-4">
-            <button type="button" class="btn-lg btn " style="background-color:transparent; text-align:right;" data-toggle="modal" data-target="#exampleModalCenter">
+            <button type="button" class="btn-lg btn " style="background-color:transparent; text-align:right;"
+                data-toggle="modal" data-target="#exampleModalCenter">
                 <i class="fas fa-cog"></i>&nbsp;
                 ⚙️
             </button>
-            
-        </div>  
-            
+
+        </div>
+
     </div>
 
     <!-- Modal 
@@ -153,8 +154,6 @@
                         </div>
 
 
-
-
                         <div class="col-sm-12">
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
@@ -200,6 +199,18 @@
                                 </div>
                                 <input id="iIsha" class="form-control form-control-lg" type="text"
                                     placeholder="Isha..." />
+                            </div>
+                        </div>
+
+                        <div class="col-sm-12">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                </div>
+                                <input id="iJuma" class="form-control form-control-lg" type="text"
+                                    placeholder="Juma..." />
                             </div>
                         </div>
 
@@ -269,83 +280,98 @@
                 </p>
             </div>
             <div class="col-lg-4">
-                   <h1  style='text-align:center;'> Donation $</h1>
+                <h1 style='text-align:center;' id="DCB"> € 8765388 </h1>
             </div>
             <div class="col-lg-4">
                 <h1 id='jam' style='text-align:right; padding-right: 100px;' class='display-6 text-right'></h1>
-                <h1  style='text-align:right; padding-right: 100px;' class="mt-15">Temprature</h1>
+                <h1 style='text-align:right; padding-right: 100px;' class="mt-15">Temprature</h1>
             </div>
         </div>
 
+    </div>
 
-        
-
+    <div class="row mx-4">
+        <div class="col-sm-12 col-md-4 col-lg-3 ncard">
+            <h1 class="card-title">Fajr فجر</h1>
+            <br>
+            <hr>
+            <h2 id="AFajr"></h2>
+            <h2 id="Fajr"></h2>
         </div>
-        
-        <div class="row mb-3">
-            <div class="col-sm-12 col-md-4 col-lg-3 ncard">
-                <h1 class="card-title">Fajr فجر</h1>
-                <h1 id="AFajr" class="text-right display-4"></h1>
-                <h1 id="Fajr" class="text-right display-4"></h1>
-            </div>
-            <div class="col-sm-12 col-md-4 col-lg-3 ncard">
-                <h2>CARD</h2>
-            </div>
-            <div class="col-sm-12 col-md-4 col-lg-3 ncard">
-                <h2>CARD</h2>
-            </div>
-            <div class="col-sm-12 col-md-4 col-lg-3 ncard">
-                <h2>CARD</h2>
-            </div>
-       </div>
-       <div class="row mb-3">
-        <div class="mr-5 ncard">
+        <div class="col-sm-12 col-md-4 col-lg-3 ncard">
+            <h1 class="card-title">Sunrise شروق</h1>
+            <br>
+            <hr>
+            <h2 id="ASunrise" ></h2>
+            <h2 id="Sunrise"></h2>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-3 ncard">
+            <h1 class="card-title">Duhur الظهر</h1>
+            <br>
+            <hr>
+            <h2 id="ADuhur"></h2>
+            <h2 id="Duhur"></h2>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-3 ncard">
+            <h1 class="card-title">Asr العصر</h1>
+            <br>
+            <hr>
+            <h2 id="AAsr"></h2>
+            <h2 id="Asr"></h2>
+        </div>
+    </div>
+
+    <div class="row mx-4">
+        <div class="col-sm-12 col-md-4 col-lg-3 ncard">
             <h1 class="card-title">Sunset غروب</h1>
-            <h1 id="Sunset" class="text-right display-4"></h1>
+            <br>
+            <hr>
+            <h2 id="Sunset"></h2>
         </div>
-        <div class="mr-5 ncard">
+        <div class="col-sm-12 col-md-4 col-lg-3 ncard">
             <h1 class="card-title">Maghrib المغرب</h1>
-            <h1 id="AMaghrib" class="text-right display-4"></h1>
-            <h1 id="Maghrib" class="text-right display-4"></h1>
+            <br>
+            <hr>
+            <h2 id="AMaghrib"></h2>
+            <h2 id="Maghrib"></h2>
         </div>
-        <div class="mr-2 ncard">
+        <div class="col-sm-12 col-md-4 col-lg-3 ncard">
             <h1 class="card-title">Isha العشاء</h1>
-            <h1 id="AIsha" class="text-right display-4"></h1>
-            <h1 id="Isha" class="text-right display-4"></h1>
+            <br>
+            <hr>
+            <h2 id="AIsha"></h2>
+            <h2 id="Isha"></h2>
         </div>
-        <div class="ml-3 ncard">
-            <h1>جمعة Jum'a </h1>
-            <h1 id="Juma" class="text-right display-4"></h1>
+        <div class="col-sm-12 col-md-4 col-lg-3 ncard">
+            <h1 class="card-title">Jum'a جمعة</h1>
+            <br>
+            <hr>
+            <h2 id="Juma"></h2>
         </div>
-   </div>
-        <div class="row" style="background-color:#162f1c; text-align:center; padding: 30px; padding-top: 50px;">
-            <img src="/img/qr_code.jpg" class="rounded img-responsiv" style=" width: 150px;"
-                class="col-sm-12 col-md-4 col-lg-6" alt="">
-            <h1 style="text-align:left; color: white;" class="col-sm-12 col-md-4 col-lg-6">
-                Send your donation to Vaasa Islamic Society
-                <b>IBAN: FI8720521800134380 </b>
-                <p id="DCB">8765388</p>
-    
-            </h1>
-        </div>
-        
-        <marquee style="background-color:white;" class="mt-4 " direction="right">
-            <h2 id="hadithArabic">
-                /
-            </h2>
-        </marquee>
-
-        <marquee style="background-color:white;" class=" mb-3" direction="left">
-            <h2 id="hadithEnglish">
-                /
-            </h2>
-        </marquee>
-
     </div>
-    <div>
-        
+
+    <marquee style="background-color:white;" class="mt-4 " direction="right">
+        <h2 id="hadithArabic">
+            /
+        </h2>
+    </marquee>
+
+    <marquee style="background-color:white;" class=" mb-3" direction="left">
+        <h2 id="hadithEnglish">
+            /
+        </h2>
+    </marquee>
+
+    <div class="row" style="background-color:#162f1c; text-align:center; padding: 30px; padding-top: 50px;">
+        <img src="/img/qr_code.jpg" class="rounded img-responsiv" style=" width: 150px;"
+            class="col-sm-12 col-md-4 col-lg-6" alt="">
+        <h1 style="text-align:left; color: white;" class="col-sm-12 col-md-4 col-lg-6">
+            Send your donation to Vaasa Islamic Society
+            <b>IBAN: FI8720521800134380 </b>
+
+        </h1>
     </div>
-    
+
     <script src='/chat.js'></script>
     <script src='/clock.js'></script>
     <script src='/getapi.js'></script>

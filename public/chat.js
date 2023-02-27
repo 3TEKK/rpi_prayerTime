@@ -1,7 +1,7 @@
 // socket io in front end
 
 // Make connection
-var socket = io.connect('http://192.168.114.168:1234/')
+var socket = io.connect('http://192.168.20.1:1234/')
 // var socket = io.connect('http://192.168.43.163:1234') 
 // change with your RPi IP address
 
@@ -24,6 +24,9 @@ var AMaghrib = document.getElementById('AMaghrib')
 var iIsha = document.getElementById('iIsha')
 var AIsha = document.getElementById('AIsha')
 
+var iIsha = document.getElementById('iJuma')
+var AIsha = document.getElementById('AJuma')
+
 //
 var iMesjidName = document.getElementById('iMesjidName')
 var ihadithEnglish = document.getElementById('ihadithEnglish')
@@ -41,8 +44,9 @@ var Sunrise = document.getElementById('Sunrise')
 var Duhur = document.getElementById('Duhur')
 var Asr = document.getElementById('Asr')
 var Sunset = document.getElementById('Sunset')
-var Magrib = document.getElementById('Magrib')
+var Maghrib = document.getElementById('Maghrib')
 var Isha = document.getElementById('Isha')
+var Juma = document.getElementById('Juma')
 var tanggalM = document.getElementById('tanggalM')
 var tanggalH = document.getElementById('tanggalH')
 
@@ -69,6 +73,7 @@ send.addEventListener('click', ()=>{
         iAsr: iAsr.value,
         iMaghrib: iMaghrib.value,
         iIsha: iIsha.value,
+        iJuma: iJuma.value,
 
         iMesjidName: iMesjidName.value,
         ihadithEnglish:ihadithEnglish.value,
@@ -93,6 +98,8 @@ socket.on('chat', (data)=>{
     Asr.innerHTML = `Prayer ${data.iAsr}`
     Maghrib.innerHTML = `Prayer ${data.iMaghrib}`
     Isha.innerHTML = `Prayer ${data.iIsha}`
+    Juma.innerHTML = `Prayer ${data.iJuma}`
+
 
     mesjidName.innerHTML = `${data.iMesjidName}`
     hadithArabic.innerHTML = `${data.ihadithArabic}`
@@ -124,9 +131,9 @@ socket.on('chat', (data)=>{
         Sunrise.innerHTML = `${data.data.timings.Sunrise}`
         Sunset.innerHTML = `${data.data.timings.Sunset}`
         ADuhur.innerHTML = `Azan ${data.data.timings.Dhuhr}`
-        AAsar.innerHTML = `Azan ${data.data.timings.Asr}`
-        AMagrib.innerHTML = `Azan ${data.data.timings.Maghrib}`
-        AIsya.innerHTML = `Azan ${data.data.timings.Isha}`
+        AAsr.innerHTML = `Azan ${data.data.timings.Asr}`
+        AMaghrib.innerHTML = `Azan ${data.data.timings.Maghrib}`
+        AIsha.innerHTML = `Azan ${data.data.timings.Isha}`
         console.log(data);
     }).catch(function (err) {
         console.warn('Something went wrong.', err);

@@ -1,5 +1,5 @@
 body {
-    background-color: white;
+    background-color: black;
     font-family: 'Lucida Bright';
     color: black;
     text-align: center;
@@ -21,30 +21,41 @@ body {
     content: "";
     display: table;
     clear: both;
-   
 }
 
 .ncard {
-    width: 615px;
-    height: 650px;
-    background: #07182E;
+    width: 700px;
+    height: 600px;
+    background: #162f1c;
     position: relative;
-    display: flex;
+    display:inline-block;
     place-content: center;
-    place-items: center;
-    overflow: hidden;
-    border-radius: 40px;
+    /*place-items: center;*/
+    /*overflow: hidden;*/
+    border-radius: 50px;
     justify-content: space-between;
-        padding-right: 30px;
-        padding-left: 40px;
+    padding: 1em;
+    padding: 70px;
+    border: 5px solid white;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin: auto;
   }
   
   .ncard h1 {
     z-index: 1;
     color: white;
-    font-size: 3em;
+    font-size: 6em;
+    text-align: center;
   }
+  .ncard h2 {
+    z-index: 1;
+    color: white;
+    font-size: 5em;
+    text-align: left;
+  } 
   
+
   /* .ncard::before {
     content: '';
     position: absolute;
@@ -65,14 +76,14 @@ body {
     }
   } */
   
-  .ncard::after {
+  /* .ncard::after {
     content: '';
     position: absolute;
-    background: #07182E;
-    ;
+    background: #162f1c;
     inset: 5px;
     border-radius: 15px;
-  }  
+  } */
+  
   /* .ncard:hover:before {
     background-image: linear-gradient(180deg, rgb(81, 255, 0), purple);
     animation: rotBGimg 3.5s linear infinite;
