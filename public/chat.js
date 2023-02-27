@@ -1,11 +1,10 @@
 // socket io in front end
 
 // Make connection
-<<<<<<< HEAD
-var socket = io.connect('http://192.168.20.1:1234/')
-=======
+
 var socket = io.connect('http://192.168.114.65:1234/')
->>>>>>> a74c6aaf5d9fca8eac190aa8aab970947f4a51d2
+
+
 // var socket = io.connect('http://192.168.43.163:1234') 
 // change with your RPi IP address
 
@@ -100,19 +99,19 @@ socket.on('chat', (data)=>{
     Fajr.innerHTML = `Prayer ${data.iFajr}`
     //
     //Sunrise.innerHTML = `${data.iSunrise}`
-<<<<<<< HEAD
+
     Duhur.innerHTML = `Prayer ${data.iDuhur}`
     Asr.innerHTML = `Prayer ${data.iAsr}`
     Maghrib.innerHTML = `Prayer ${data.iMaghrib}`
     Isha.innerHTML = `Prayer ${data.iIsha}`
     Juma.innerHTML = `Prayer ${data.iJuma}`
 
-=======
-    // Duhur.innerHTML = `Prayer ${data.iDuhur}`
-    // Asr.innerHTML = `Prayer ${data.iAsr}`
-    // Maghrib.innerHTML = `Prayer ${data.iMaghrib}`
-    // Isha.innerHTML = `Prayer ${data.iIsha}`
->>>>>>> a74c6aaf5d9fca8eac190aa8aab970947f4a51d2
+
+    Duhur.innerHTML = `Prayer ${data.iDuhur}`
+    Asr.innerHTML = `Prayer ${data.iAsr}`
+    Maghrib.innerHTML = `Prayer ${data.iMaghrib}`
+    Isha.innerHTML = `Prayer ${data.iIsha}`
+
 
     mesjidName.innerHTML = `${data.iMesjidName}`
     hadithArabic.innerHTML = `${data.ihadithArabic}`
