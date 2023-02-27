@@ -17,3 +17,65 @@ body {
     opacity:1 !important;
 }
 
+#boxes {
+    content: "";
+    display: table;
+    clear: both;
+   
+}
+
+.ncard {
+    width: 615px;
+    height: 650px;
+    background: #07182E;
+    position: relative;
+    display: flex;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 40px;
+    justify-content: space-between;
+        padding-right: 30px;
+        padding-left: 40px;
+  }
+  
+  .ncard h1 {
+    z-index: 1;
+    color: white;
+    font-size: 3em;
+  }
+  
+  /* .ncard::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    background-image: linear-gradient(180deg, rgb(0, 183, 255), rgb(255, 48, 255));
+    height: 130%;
+    animation: rotBGimg 3s linear infinite;
+    transition: all 0.2s linear;
+  } */
+  
+  /* @keyframes rotBGimg {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  } */
+  
+  .ncard::after {
+    content: '';
+    position: absolute;
+    background: #07182E;
+    ;
+    inset: 5px;
+    border-radius: 15px;
+  }  
+  /* .ncard:hover:before {
+    background-image: linear-gradient(180deg, rgb(81, 255, 0), purple);
+    animation: rotBGimg 3.5s linear infinite;
+  } */
+  
+  

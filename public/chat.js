@@ -1,7 +1,7 @@
 // socket io in front end
 
 // Make connection
-var socket = io.connect('http://192.168.114.65:1234/')
+var socket = io.connect('http://192.168.114.168:1234/')
 // var socket = io.connect('http://192.168.43.163:1234') 
 // change with your RPi IP address
 
