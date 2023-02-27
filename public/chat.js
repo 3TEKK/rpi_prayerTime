@@ -1,7 +1,7 @@
 // socket io in front end
 
 // Make connection
-var socket = io.connect('http://192.168.114.168:1234/')
+var socket = io.connect('http://192.168.114.65:1234/')
 // var socket = io.connect('http://192.168.43.163:1234') 
 // change with your RPi IP address
 
@@ -50,7 +50,9 @@ var tanggalH = document.getElementById('tanggalH')
 var mesjidName = document.getElementById('mesjidName')
 var hadithEnglish = document.getElementById('hadithEnglish')
 var hadithArabic = document.getElementById('hadithArabic')
+//Donation counter
 var DCB = document.getElementById('DCB')
+
 
 
 
@@ -89,10 +91,10 @@ socket.on('chat', (data)=>{
     Fajr.innerHTML = `Prayer ${data.iFajr}`
     //
     //Sunrise.innerHTML = `${data.iSunrise}`
-    Duhur.innerHTML = `Prayer ${data.iDuhur}`
-    Asr.innerHTML = `Prayer ${data.iAsr}`
-    Maghrib.innerHTML = `Prayer ${data.iMaghrib}`
-    Isha.innerHTML = `Prayer ${data.iIsha}`
+    // Duhur.innerHTML = `Prayer ${data.iDuhur}`
+    // Asr.innerHTML = `Prayer ${data.iAsr}`
+    // Maghrib.innerHTML = `Prayer ${data.iMaghrib}`
+    // Isha.innerHTML = `Prayer ${data.iIsha}`
 
     mesjidName.innerHTML = `${data.iMesjidName}`
     hadithArabic.innerHTML = `${data.ihadithArabic}`
@@ -134,7 +136,7 @@ socket.on('chat', (data)=>{
 
     //py server
     const prayerTimes = [`${data.iFajr}`,`${data.iDuhur}`,`${data.iAsr}`,`${data.iMaghrib}`,`${data.iIsha}`]
-    const Data = `${data.iFajr}`
+    
 
    // while (true) {
     function sendPrayerTimes() {
