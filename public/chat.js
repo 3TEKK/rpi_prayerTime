@@ -2,7 +2,7 @@
 
 // Make connection
 
-var socket = io.connect('http://192.168.114.65:1234/')
+var socket = io.connect('http://192.168.56.1:1234/')
 
 
 // var socket = io.connect('http://192.168.43.163:1234') 
