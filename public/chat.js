@@ -60,7 +60,22 @@ var hadithArabic = document.getElementById('hadithArabic')
 //Donation counter
 var DCB = document.getElementById('DCB')
 
+//To obtain current date:
+const currentDate = new Date();
+  const year = currentDate.getFullYear();
+  const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Note that month is zero-indexed, so add 1 and zero-pad to 2 digits
+  const day = currentDate.getDate().toString().padStart(2, '0'); // Zero-pad to 2 digits
+  const formattedDate = `${year}-${month}-${day}`;
+  //console.log(formattedDate); // Output: "2023-03-01"
 
+fetch('data.json')
+    .then(response => response.json())
+    .then(data => {
+      const CurrentDateData = data.filter(item => item.Date === formattedDate);// This function fetches data from the excel sheet)
+      if (formattedDate==data[0].Date){
+        fromExcel(CurrentDateData);
+      }
+    })
 
 function fromExcel(CurrentDateData) {
 
@@ -128,15 +143,18 @@ socket.on('chat', (data) => {
   DCB.innerHTML = `€${data.iDCB}`
 
 
-    //pop up chec
-    var date = new Date()
-    var hr = date.getHours()
-    var min = date.getMinutes()
-    if (`${hr}:${min}` == Fajr.innerHTML.value) {
-        openModal()
-    }
-    console.log(`${hr}:${min}`)
 
+  var checkBox = document.getElementById("myCheck");
+  var text = document.getElementById("donationtext");
+  var text1 = document.getElementById("DCBtext");
+  if (checkBox.checked == true){
+    text.style.display = "block";
+    text1.style.display = "block";
+  } else {
+     text.style.display = "none";
+     text1.style.display = "none";
+  }
+  
     //end pop up check
     feedback.innerHTML = ''
 
