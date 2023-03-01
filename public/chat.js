@@ -2,7 +2,7 @@
 
 // Make connection
 
-var socket = io.connect('http://192.168.56.1:1234/')
+var socket = io.connect('http://192.168.114.65:1234/')
 
 
 // var socket = io.connect('http://192.168.43.163:1234') 
@@ -60,23 +60,7 @@ var hadithArabic = document.getElementById('hadithArabic')
 //Donation counter
 var DCB = document.getElementById('DCB')
 
-//To obtain current date:
-const currentDate = new Date();
-  const year = currentDate.getFullYear();
-  const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Note that month is zero-indexed, so add 1 and zero-pad to 2 digits
-  const day = currentDate.getDate().toString().padStart(2, '0'); // Zero-pad to 2 digits
-  const formattedDate = `${year}-${month}-${day}`;
-  //console.log(formattedDate); // Output: "2023-03-01"
 
-fetch('data.json')
-    .then(response => response.json())
-    .then(data => {
-      const CurrentDateData = data.filter(item => item.Date === formattedDate);// This function fetches data from the excel sheet)
-      if (formattedDate==data[0].Date){
-        fromExcel(CurrentDateData);
-      }
-    })
-    
 
 function fromExcel(CurrentDateData) {
 
@@ -144,17 +128,17 @@ socket.on('chat', (data) => {
   DCB.innerHTML = `€${data.iDCB}`
 
 
-  //pop up chec
-  var date = new Date()
-  var hr = date.getHours()
-  var min = date.getMinutes()
-  if (`${hr}:${min}` == Fajr.innerHTML.value) {
-    openModal()
-  }
-  console.log(`${hr}:${min}`)
+    //pop up chec
+    var date = new Date()
+    var hr = date.getHours()
+    var min = date.getMinutes()
+    if (`${hr}:${min}` == Fajr.innerHTML.value) {
+        openModal()
+    }
+    console.log(`${hr}:${min}`)
 
-  //end pop up check
-  feedback.innerHTML = ''
+    //end pop up check
+    feedback.innerHTML = ''
 
  // function fromAPI() {
     // get api for incoming city
