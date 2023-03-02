@@ -11,7 +11,7 @@ import threading
 # load azan.mp3
 mixer.init()
 # mixer.music.load('C:/Users/HP/Downloads/RasPi_Ramadhan_INDONESIA/azan.mp3')
-mixer.music.load('C:/Users/azeem/OneDrive/Desktop/Git/rpi_prayerTime/azan.mp3')
+mixer.music.load('/home/ahmed/Desktop/Git/rpi_prayerTime/azan.mp3')
 
 Fajr = ""
 Duhur = ""
@@ -45,16 +45,15 @@ def check(data):
     Fajr,Duhur,Asr,Meghrib,Isha = data
     currentDateAndTime = datetime.now()
     currentTime = currentDateAndTime.strftime("%H:%M")
+    print(data)
     while True:
         currentDateAndTime = datetime.now()
         currentTime = currentDateAndTime.strftime("%H:%M")
         
         if Fajr == currentTime or Duhur == currentTime or Asr == currentTime or Meghrib == currentTime or Isha == currentTime:
             mixer.music.play()
-            return Temp1()
-        else:
-            return Temp2 ()      
-            
+            return data
+       
             #y x= data+ x
             #print(Fajr)
             
@@ -64,14 +63,14 @@ def check(data):
             #return data
 
 
-def Temp1():
-    Temp = '23'
-    return Temp
+# def Temp1():
+#     Temp = '23'
+#     return Temp
 
 
-def Temp2():
-    Temp = "Temperature: 23 "
-    return Temp
+# def Temp2():
+#     Temp = "Temperature: 23 "
+#     return Temp
 
 if __name__ == "__main__": 
     app.run(debug=True)

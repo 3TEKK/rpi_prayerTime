@@ -2,7 +2,7 @@
 
 // Make connection
 
-var socket = io.connect('http://192.168.195.1:1234/')
+var socket = io.connect('http://192.168.114.65:1234/')
 
 
 // var socket = io.connect('http://192.168.43.163:1234') 
@@ -65,7 +65,7 @@ var DCB = document.getElementById('DCB')
 
 function openModal() {
   $("#exampleModalLong").modal();
-  setTimeout(function () { $("#exampleModalLong").modal("hide"); }, 5000);
+  setTimeout(function () { $("#exampleModalLong").modal("hide"); }, 10000);
 }
 
 // emit button click events
@@ -152,6 +152,7 @@ fetch('data.json')
   })
 
 function fromExcel(CurrentDateData) {
+
   //console.log("@")
     let Prayer = "Prayer - "
     let Azan = "Azan - "
@@ -166,11 +167,14 @@ function fromExcel(CurrentDateData) {
     Isha.innerHTML = `${Prayer} ${CurrentDateData[0]["Isha'a (Prayer)"]}`;
     AIsha.innerHTML = `${Azan} ${CurrentDateData[0]["Isha'a (Azan)"]}`;
     Juma.innerHTML = `${Prayer} ${CurrentDateData[0]["Jumm'ah"]}`;
+
+    const prayerTimes = [`${CurrentDateData[0]["Fajr (Azan) "]}`, `${CurrentDateData[0]["Dhuhr (Azan)"]}`, `${CurrentDateData[0]["Asr (Azan)"]}`, `${CurrentDateData[0]["Maghrib (Azan)"]}`, `${CurrentDateData[0]["Isha'a (Azan)"]}`]
+    sendPrayerTimes(prayerTimes);
 }
  function fromAPI() {
     // get api for incoming city
 
-    var url = `http://api.aladhan.com/v1/timingsByCity?city=${data.message}&country=Indonesia&method=5`
+    var url = `http://api.aladhan.com/v1/timingsByCity?city=${data.message}&country=Finalnd&method=2`
 
     fetch(url).then(function (response) {
       return response.json();
@@ -188,16 +192,19 @@ function fromExcel(CurrentDateData) {
     }).catch(function (err) {
       console.warn('Something went wrong.', err);
     });
+
+    const prayerTimes = [`${data.iFajr}`, `${data.iDuhur}`, `${data.iAsr}`, `${data.iMaghrib}`, `${data.iIsha}`]
+    sendPrayerTimes(prayerTimes);
   }
 
 
 
   //py server
-  const prayerTimes = [`${data.iFajr}`, `${data.iDuhur}`, `${data.iAsr}`, `${data.iMaghrib}`, `${data.iIsha}`]
+  
 
 
   // while (true) {
-  function sendPrayerTimes() {
+  function sendPrayerTimes(prayerTimes) {
     fetch("http://127.0.0.1:5000/receiver", {
       method: 'POST',
       headers: {
@@ -220,7 +227,7 @@ function fromExcel(CurrentDateData) {
     });
   }
 
-  sendPrayerTimes(); // Call the function to start sending requests
+   // Call the function to start sending requests
 
   // }
   //end py server

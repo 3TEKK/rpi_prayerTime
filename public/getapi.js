@@ -14,7 +14,7 @@ var isya = document.getElementById('isya')
 // get API aladhan
 city = kota.textContent
 console.log(city)
-var url = `http://api.aladhan.com/v1/timingsByCity?city=${city}&country=Indonesia&method=5`
+var url = `http://api.aladhan.com/v1/timingsByCity?city=${city}&country=Finalnd&method=2`
 
 fetch(url).then(function (response) {
     return response.json();
