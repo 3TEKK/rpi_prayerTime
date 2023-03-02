@@ -60,39 +60,7 @@ var hadithArabic = document.getElementById('hadithArabic')
 //Donation counter
 var DCB = document.getElementById('DCB')
 
-//To obtain current date:
-const currentDate = new Date();
-  const year = currentDate.getFullYear();
-  const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Note that month is zero-indexed, so add 1 and zero-pad to 2 digits
-  const day = currentDate.getDate().toString().padStart(2, '0'); // Zero-pad to 2 digits
-  const formattedDate = `${year}-${month}-${day}`;
-  //console.log(formattedDate); // Output: "2023-03-01"
 
-fetch('data.json')
-    .then(response => response.json())
-    .then(data => {
-      const CurrentDateData = data.filter(item => item.Date === formattedDate);// This function fetches data from the excel sheet)
-      if (formattedDate==data[0].Date){
-        fromExcel(CurrentDateData);
-      }
-    })
-
-function fromExcel(CurrentDateData) {
-
-      let Prayer = "Prayer - "
-      let Azan = "Azan - "
-      Fajr.innerHTML = `${Prayer} ${CurrentDateData[0]["Fajr (Prayer)"]}`;
-      AFajr.innerHTML = `${Azan} ${CurrentDateData[0]["Fajr (Azan) "]}`;
-      Duhur.innerHTML = `${Prayer} ${CurrentDateData[0]["Dhuhr (Prayer)"]}`;
-      ADuhur.innerHTML = `${Azan} ${CurrentDateData[0]["Dhuhr (Azan)"]}`;
-      Asr.innerHTML = `${Prayer} ${CurrentDateData[0]["Asr (Prayer)"]}`;
-      AAsr.innerHTML = `${Azan} ${CurrentDateData[0]["Asr (Azan)"]}`;
-      Maghrib.innerHTML = `${Prayer} ${CurrentDateData[0]["Maghrib (Prayer)"]}`;
-      AMaghrib.innerHTML = `${Azan} ${CurrentDateData[0]["Maghrib (Azan)"]}`;
-      Isha.innerHTML = `${Prayer} ${CurrentDateData[0]["Isha'a (Prayer)"]}`;
-      AIsha.innerHTML = `${Azan} ${CurrentDateData[0]["Isha'a (Azan)"]}`;
-      Juma.innerHTML = `${Prayer} ${CurrentDateData[0]["Jumm'ah"]}`;
-}
 
 
 function openModal() {
@@ -158,7 +126,45 @@ socket.on('chat', (data) => {
     //end pop up check
     feedback.innerHTML = ''
 
- // function fromAPI() {
+    //To obtain current date:
+const currentDate = new Date();
+const year = currentDate.getFullYear();
+const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Note that month is zero-indexed, so add 1 and zero-pad to 2 digits
+const day = currentDate.getDate().toString().padStart(2, '0'); // Zero-pad to 2 digits
+const formattedDate = `${year}-${month}-${day}`;
+//console.log(formattedDate); // Output: "2023-03-01"
+console.log(formattedDate); // Output: "  
+fetch('data.json')
+  .then(response => response.json())
+  .then(data => {
+    const CurrentDateData = data.filter(item => item.Date === formattedDate);// This function fetches data from the excel sheet)
+    console.log(CurrentDateData)
+    if (formattedDate==data[0].Date){
+      fromExcel(CurrentDateData);
+    }
+    else{
+      fromAPI()
+    }
+
+  })
+
+function fromExcel(CurrentDateData) {
+
+    let Prayer = "Prayer - "
+    let Azan = "Azan - "
+    Fajr.innerHTML = `${Prayer} ${CurrentDateData[0]["Fajr (Prayer)"]}`;
+    AFajr.innerHTML = `${Azan} ${CurrentDateData[0]["Fajr (Azan) "]}`;
+    Duhur.innerHTML = `${Prayer} ${CurrentDateData[0]["Dhuhr (Prayer)"]}`;
+    ADuhur.innerHTML = `${Azan} ${CurrentDateData[0]["Dhuhr (Azan)"]}`;
+    Asr.innerHTML = `${Prayer} ${CurrentDateData[0]["Asr (Prayer)"]}`;
+    AAsr.innerHTML = `${Azan} ${CurrentDateData[0]["Asr (Azan)"]}`;
+    Maghrib.innerHTML = `${Prayer} ${CurrentDateData[0]["Maghrib (Prayer)"]}`;
+    AMaghrib.innerHTML = `${Azan} ${CurrentDateData[0]["Maghrib (Azan)"]}`;
+    Isha.innerHTML = `${Prayer} ${CurrentDateData[0]["Isha'a (Prayer)"]}`;
+    AIsha.innerHTML = `${Azan} ${CurrentDateData[0]["Isha'a (Azan)"]}`;
+    Juma.innerHTML = `${Prayer} ${CurrentDateData[0]["Jumm'ah"]}`;
+}
+ function fromAPI() {
     // get api for incoming city
 
     var url = `http://api.aladhan.com/v1/timingsByCity?city=${data.message}&country=Indonesia&method=5`
@@ -166,8 +172,8 @@ socket.on('chat', (data) => {
     fetch(url).then(function (response) {
       return response.json();
     }).then(function (data) {
-      tanggalM.innerHTML = `${data.data.date.gregorian.day} ${data.data.date.gregorian.month.en} ${data.data.date.gregorian.year}`
-      tanggalH.innerHTML = `${data.data.date.hijri.day} ${data.data.date.hijri.month.en} ${data.data.date.hijri.year}`
+      //tanggalM.innerHTML = `${data.data.date.gregorian.day} ${data.data.date.gregorian.month.en} ${data.data.date.gregorian.year}`
+      //tanggalH.innerHTML = `${data.data.date.hijri.day} ${data.data.date.hijri.month.en} ${data.data.date.hijri.year}`
       AFajr.innerHTML = `Azan ${data.data.timings.Fajr}`
       Sunrise.innerHTML = `${data.data.timings.Sunrise}`
       Sunset.innerHTML = `${data.data.timings.Sunset}`
@@ -179,7 +185,7 @@ socket.on('chat', (data) => {
     }).catch(function (err) {
       console.warn('Something went wrong.', err);
     });
- // }
+  }
 
 
 
