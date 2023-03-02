@@ -4,6 +4,7 @@ body {
     color: black;
     text-align: center;
     background-image: url('/img/VIS-Background2.png'); 
+
     background-repeat: no-repeat;
     background-attachment: fixed; 
     background-size: 100% 100%;
@@ -22,6 +23,8 @@ body {
     display: table;
     clear: both;
 }
+
+
 
 .ncard {
     width: 700px;
@@ -54,6 +57,11 @@ body {
     font-size: 6em;
     text-align: left;
   } 
+  .ncard img{
+    display:inline-block;
+    vertical-align:right;
+  }
+  
   
 
   /* .ncard::before {
