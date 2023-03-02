@@ -2,7 +2,7 @@
 
 // Make connection
 
-var socket = io.connect('http://192.168.114.65:1234/')
+var socket = io.connect('http://192.168.195.1:1234/')
 
 
 // var socket = io.connect('http://192.168.43.163:1234') 
@@ -138,18 +138,21 @@ fetch('data.json')
   .then(response => response.json())
   .then(data => {
     const CurrentDateData = data.filter(item => item.Date === formattedDate);// This function fetches data from the excel sheet)
-    console.log(CurrentDateData)
-    if (formattedDate==data[0].Date){
+    //console.log(formattedDate, "and " ,CurrentDateData[0].Date )
+    if (formattedDate==CurrentDateData[0].Date){
+      //console.log("True")
       fromExcel(CurrentDateData);
     }
-    else{
+    if (formattedDate!=CurrentDateData[0].Date) {
+      
+      console.log("wrong")
       fromAPI()
     }
 
   })
 
 function fromExcel(CurrentDateData) {
-
+  //console.log("@")
     let Prayer = "Prayer - "
     let Azan = "Azan - "
     Fajr.innerHTML = `${Prayer} ${CurrentDateData[0]["Fajr (Prayer)"]}`;
