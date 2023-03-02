@@ -71,7 +71,7 @@
     <!-- Modal -->
     <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
         aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-dialog modal-lg" style="max-width: 80%; zoom: 400%;" role="document">
             <div class="modal-content">
                 <div class="modal-header">
 
@@ -117,6 +117,10 @@
 
                     <div class="form-group row">
                         <!-- kota -->
+                        <div class="checkbox-con">
+                            Show Donation: <input type="checkbox" id="myCheck" >
+                          </div>
+
                         <div class="col-sm-12">
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
@@ -280,12 +284,12 @@
                 </p>
             </div>
             <div class="col-lg-4">
-                <p style="text-align: center; font-size: 80px;"><b>Donations This Week</b> </p>
-                <h1 style='text-align: center;background: #73AD21; padding: 15px; border-radius: 25px; width: max-content; margin: auto; font-size: 80px;'  ><b id="DCB">1576.00</b> </h1>
+                <p style="text-align: center; font-size: 80px; display:none;" id="donationtext"><b>Donations This Week</b> </p>
+                <h1 style='display:none; text-align: center;background: #162f1c; padding: 15px; border-radius: 25px; width: max-content; margin: auto; font-size: 80px; color: white;'  id="DCBtext"><b id="DCB">1576.00</b> </h1>
             </div>
             <div class="col-lg-4">
                 <h1  style='text-align:right; padding-right: 100px; font-size: 100px;' class='display-6 text-right'><b id='jam'></b></h1>
-                <h1 style='text-align:right; padding-right: 100px; font-size: 80px;' class="mt-15"><b>Temprature</b> </h1>
+                
                    
             </div>
 
