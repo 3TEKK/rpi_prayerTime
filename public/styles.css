@@ -28,7 +28,7 @@ body {
 
 .ncard {
     width: 700px;
-    height: 600px;
+    height: 630px;
     background: #162f1c;
     position: relative;
     display:inline-block;
@@ -61,7 +61,9 @@ body {
     display:inline-block;
     vertical-align:right;
   }
-  
+  h2,img{
+    display: inline-block;
+  }
   
 /* checkbox*/
 
