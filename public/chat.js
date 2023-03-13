@@ -132,7 +132,7 @@ send.addEventListener('click', () => {
     iJuma: iJuma.value,
 
     //iMesjidName: iMesjidName.value,
-    //ihadithEnglish: ihadithEnglish.value,
+    ihadithEnglish: ihadithEnglish.value,
     ihadithArabic: ihadithArabic.value,
     iDCB: iDCB.value,
 
@@ -158,7 +158,7 @@ socket.on('chat', (data) => {
 
   //mesjidName.innerHTML = `${data.iMesjidName}`
   hadithArabic.innerHTML = `${data.ihadithArabic}`
- // hadithEnglish.innerHTML = `${data.ihadithEnglish}`
+  hadithEnglish.innerHTML = `${data.ihadithEnglish}`
   DCB.innerHTML = `€${data.iDCB}`
 
 
