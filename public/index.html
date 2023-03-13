@@ -44,21 +44,22 @@
 <body>
     <div class="row mt-5">
         <div class="mt-3 col-lg-4">
-            <img align="left" src="/img/VIS.png" class="rounded img-responsiv" style="max-width:50%;" alt="logo">
+            <button type="button" class="btn-lg btn " style="background-color:transparent; "
+                data-toggle="modal" data-target="#exampleModalCenter">
+                <i class="fas fa-cog"></i>&nbsp;
+                <img align="left" src="/img/VIS.png" class="rounded img-responsiv" style="max-width:70%;" alt="logo">
+            </button>
+            
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4 smhide">
             <h1 class=" " style="text-align:center;">
-              <b><p id="mesjidName" style="font-size: 130px;">Vaasa Islamic society</p><p style="font-size: 120px;">- Prayer Times</p> </b>  
+              <b><p  style="font-size: 130px;">Vaasa Islamic society</p><p style="font-size: 120px;">- Prayer Times</p> </b>  
                 <!-- button trigger modal -->
             </h1>
             
         </div>
         <div class=" col-lg-4">
-            <button type="button" class="btn-lg btn " style="background-color:transparent; text-align:right;"
-                data-toggle="modal" data-target="#exampleModalCenter">
-                <i class="fas fa-cog"></i>&nbsp;
-                ⚙️
-            </button>
+            
 
         </div>
 
@@ -115,40 +116,13 @@
 
                     <div class="form-group row">
                         <!-- kota -->
-                        <div class="checkbox-con">
-                            Show Donation: <input type="checkbox" id="myCheck" >
-                          </div>
-
+                        
                         <div class="col-sm-12">
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                                </div>
-                                <input id="message" class="form-control form-control-lg" type="text"
-                                    placeholder="Enter city name ..." />
-                            </div>
-                        </div>
-
-                        <div class="col-sm-12">
-                            <div class="input-group mb-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                                </div>
-                                <input id="iMesjidName" class="form-control form-control-lg" type="text"
-                                    placeholder="Mesjid Name" />
-                            </div>
-                        </div>
-
-                        <div class="col-sm-12">
-                            <div class="input-group mb-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
+                                    <div class="checkbox-con">
+                                        Show Donation: <input type="checkbox" id="myCheck" >
+                                      </div>
                                 </div>
                                 <input id="iFajr" class="form-control form-control-lg" type="text"
                                     placeholder="Fajr ..." />
@@ -159,9 +133,7 @@
                         <div class="col-sm-12">
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
+                                    
                                 </div>
                                 <input id="iDuhur" class="form-control form-control-lg" type="text"
                                     placeholder="Duhur..." />
@@ -171,9 +143,7 @@
                         <div class="col-sm-12">
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
+                                   
                                 </div>
                                 <input id="iAsr" class="form-control form-control-lg" type="text"
                                     placeholder="Asr..." />
@@ -183,9 +153,7 @@
                         <div class="col-sm-12">
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
+                                   
                                 </div>
                                 <input id="iMaghrib" class="form-control form-control-lg" type="text"
                                     placeholder="Maghrib..." />
@@ -195,9 +163,7 @@
                         <div class="col-sm-12">
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
+                                  
                                 </div>
                                 <input id="iIsha" class="form-control form-control-lg" type="text"
                                     placeholder="Isha..." />
@@ -207,9 +173,7 @@
                         <div class="col-sm-12">
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
+                                   
                                 </div>
                                 <input id="iJuma" class="form-control form-control-lg" type="text"
                                     placeholder="Juma..." />
@@ -220,34 +184,20 @@
                         <div class="col-sm-12">
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
+                                  
                                 </div>
                                 <input id="ihadithArabic" class="form-control form-control-lg" type="text"
-                                    placeholder="Hadith of Week (Arabic)..." />
+                                    placeholder="Hadith of Week ..." />
                             </div>
                         </div>
 
 
-                        <div class="col-sm-12">
-                            <div class="input-group mb-2">
-                                <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                                </div>
-                                <input id="ihadithEnglish" class="form-control form-control-lg" type="text"
-                                    placeholder="Hadith of Week (English)..." />
-                            </div>
-                        </div>
+                        
 
                         <div class="col-sm-12">
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
+                                   
                                 </div>
                                 <input id="iDCB" class="form-control form-control-lg" type="text"
                                     placeholder="Donation Counter Box" />
@@ -270,9 +220,9 @@
     </div>
 
     <!-- output -->
-    <div class="mt-5" style="text-align: left;">
+    <div class="mt-5 " style="text-align: left;">
 
-        <div class="row">
+        <div class="row smhide">
             <div class="col-lg-4">
                 <h1 id="" class=" display-4" style="padding-left: 100px; font-size: 130px;"><b id="kota">Vaasa</b></h1>
                 <p class="lead">
@@ -295,7 +245,7 @@
 
     </div>
 
-    <div class="row mx-4">
+    <div class="row mx-4 smhide">
         <div class="col-sm-12 col-md-4 col-lg-3 ncard">
             <h1 class="card-title" style="font-size:130px;">Fajr فجر</h1>
             <br>
@@ -339,7 +289,7 @@
     </div>
 
     <div class="row mx-4">
-        <div class="col-sm-12 col-md-4 col-lg-3 ncard">
+        <div class="col-sm-12 col-md-4 col-lg-3 ncard smhide">
             <h1 class="card-title" style="font-size:130px;">Sunset غروب</h1>
             <br>
             <hr>
@@ -348,7 +298,7 @@
                 <img class="float-right" src="img/vis-logosmall.png" alt="Logo">
                 </section>
         </div>
-        <div class="col-sm-12 col-md-4 col-lg-3 ncard">
+        <div class="col-sm-12 col-md-4 col-lg-3 ncard smhide">
             <h1 class="card-title" style="font-size:130px;">Maghrib المغرب</h1>
             <br>
             <hr>
@@ -358,7 +308,7 @@
                 <img class="float-right" src="img/vis-logosmall.png" alt="Logo">
                 </section>
         </div>
-        <div class="col-sm-12 col-md-4 col-lg-3 ncard">
+        <div class="col-sm-12 col-md-4 col-lg-3 ncard smhide">
             <h1 class="card-title" style="font-size:130px;">Isha العشاء</h1>
             <br>
             <hr>
@@ -368,30 +318,26 @@
                 <img class="float-right" src="img/vis-logosmall.png" alt="Logo">
                 </section>
         </div>
-        <div class="col-sm-12 col-md-4 col-lg-3 ncard">
-            <h1 class="card-title" style="font-size:130px;">Jum'a جمعة</h1>
+        <div class="col-sm-12 col-md-4 col-lg-3 ncard smhide">
+            <h1 class="card-title smhide" style="font-size:130px;">Jum'a جمعة</h1>
             <br>
             <hr>
             <section>
-                <h2  style="font-size:120px;"><b id="Juma"></b></h2>
-                <img class="float-right" src="img/vis-logosmall.png" alt="Logo">
+                <h2  style="font-size:120px;"><b id="Juma" class="smhide"></b></h2>
+                <img class="float-right smhide" src="img/vis-logosmall.png" alt="Logo">
                 </section>         
         </div>
     </div>
 
-    <marquee style="background-color:white;" class="mt-4 " direction="right">
-        <h2 id="hadithArabic" style="font-size: 90px;">
+    <marquee style="background-color:white;" class="mt-4 smhide" direction="right">
+        <h2 id="hadithArabic" style="font-size: 150px;">
             /
         </h2>
     </marquee>
 
-    <marquee style="background-color:white;" class=" mb-3" direction="left">
-        <h2 id="hadithEnglish" style="font-size: 90px;">
-            /
-        </h2>
-    </marquee>
+    
 
-    <div class="" style="background-color:#162f1c; text-align:center; padding: 30px; padding-top: 50px;">
+    <div class="smhide" style="background-color:#162f1c; text-align:center; padding: 30px; padding-top: 50px;">
        
         <h1 style="text-align:center; color: white; font-size: 100px;" >
             Send your donation to Vaasa Islamic Society <br>
@@ -401,7 +347,7 @@
 
     <script src='/chat.js'></script>
     <script src='/clock.js'></script>
-    <script src='/getapi.js'></script>
+    <script src='/dgetapi.js'></script>
 </body>
 
 </html>
