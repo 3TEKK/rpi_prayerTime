@@ -98,10 +98,8 @@ function fromExcel(CurrentDateData) {
     let Prayer = "Prayer - "
     let Azan = "Azan - "
     let time="Time: "
-    str= new Date(currentDate.setDate(currentDate.getDay())).toUTCString()
-    newstr = str.slice(0, 3)
-    console.log(newstr)
-    tanggalM.innerHTML = `${newstr} ${CurrentDateData[0]["Date"]}`;
+
+    tanggalM.innerHTML = `${CurrentDateData[0]["Date"]}`;
     tanggalH.innerHTML = `${CurrentDateData[0]["Hijri Date"]}`;
     Fajr.innerHTML = `${Prayer} ${CurrentDateData[0]["Fajr (Prayer)"]}`;
     AFajr.innerHTML = `${Azan} ${CurrentDateData[0]["Fajr (Azan)"]}`;
@@ -210,10 +208,8 @@ socket.on('chat', (data) => {
       let Prayer = "Prayer - "
       let Azan = "Azan - "
       let time="Time: "
-      str= new Date(currentDate.setDate(currentDate.getDay())).toUTCString()
-      newstr = str.slice(0, 3)
-      console.log(newstr)
-      tanggalM.innerHTML = `${newstr} ${CurrentDateData[0]["Date"]}`;
+
+      tanggalM.innerHTML = `${CurrentDateData[0]["Date"]}`;
       tanggalH.innerHTML = `${CurrentDateData[0]["Hijri Date"]}`;
       Fajr.innerHTML = `${Prayer} ${CurrentDateData[0]["Fajr (Prayer)"]}`;
       AFajr.innerHTML = `${Azan} ${CurrentDateData[0]["Fajr (Azan)"]}`;
