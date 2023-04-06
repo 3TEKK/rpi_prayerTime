@@ -74,20 +74,25 @@ function openModal() {
 //startup
 //To obtain current date:
 const currentDate = new Date();
-const year = currentDate.getFullYear();
-const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Note that month is zero-indexed, so add 1 and zero-pad to 2 digits
-const day = currentDate.getDate().toString().padStart(2, '0'); // Zero-pad to 2 digits
-const formattedDate = `${year}-${month}-${day}`;
+
+const year = currentDate.getFullYear().toString().slice(-2);
+const monthNames = ['January', 'February', 'March', 'Apr', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const monthIndex = currentDate.getMonth();
+const month = monthNames[monthIndex];
+
+const day = currentDate.getDate().toString().padStart(2, '0');
+const formattedDate = `${day}-${month}-${year}`;
 console.log(formattedDate);
 //console.log(formattedDate); // Output: "2023-03-01"
-console.log(formattedDate); // Output: "  
+ // Output: "  
 fetch('data.json')
   .then(response => response.json())
   .then(data => {
+  
     const CurrentDateData = data.filter(item => item.Date === formattedDate);// This function fetches data from the excel sheet)
-    //console.log(formattedDate, "and " ,CurrentDateData[0].Date )
-    if (formattedDate==CurrentDateData[0].Date){
-      //console.log("True")
+    console.log( CurrentDateData[0]["Date"] )
+    if (formattedDate==CurrentDateData[0]["Date"]){
+      console.log("True")
       fromExcel(CurrentDateData);
     }
   }
@@ -110,7 +115,7 @@ function fromExcel(CurrentDateData) {
     AAsr.innerHTML = `${Azan} ${CurrentDateData[0]["Asr (Azan)"]}`;
     Sunset.innerHTML = `${time} ${CurrentDateData[0]["Sunset"]}`;
     Maghrib.innerHTML = `${Prayer} ${CurrentDateData[0]["Maghrib (Prayer)"]}`;
-    AMaghrib.innerHTML = `${Azan} ${CurrentDateData[0]["Maghrib (Azan)"]}`;
+    AMaghrib.innerHTML = `${Azan} ${CurrentDateData[0]["Sunset"]}`;
     Isha.innerHTML = `${Prayer} ${CurrentDateData[0]["Isha'a (Prayer)"]}`;
     AIsha.innerHTML = `${Azan} ${CurrentDateData[0]["Isha'a (Azan)"]}`;
     Juma.innerHTML = `${Prayer} ${CurrentDateData[0]["Jum’ah"]}`;
@@ -220,7 +225,7 @@ socket.on('chat', (data) => {
       AAsr.innerHTML = `${Azan} ${CurrentDateData[0]["Asr (Azan)"]}`;
       Sunset.innerHTML = `${time} ${CurrentDateData[0]["Sunset"]}`;
       Maghrib.innerHTML = `${Prayer} ${CurrentDateData[0]["Maghrib (Prayer)"]}`;
-      AMaghrib.innerHTML = `${Azan} ${CurrentDateData[0]["Maghrib (Azan)"]}`;
+      AMaghrib.innerHTML = `${Azan} ${CurrentDateData[0]["Sunset"]}`;
       Isha.innerHTML = `${Prayer} ${CurrentDateData[0]["Isha'a (Prayer)"]}`;
       AIsha.innerHTML = `${Azan} ${CurrentDateData[0]["Isha'a (Azan)"]}`;
       Juma.innerHTML = `${Prayer} ${CurrentDateData[0]["Jum’ah"]}`;
